@@ -1,0 +1,1503 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Alpha Leads</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{color-scheme:light;--bg:#f6f4fb;--card:#ffffff;--card2:#f1ecfb;--line:rgba(40,20,90,.13);--tx:#1d1530;--mut:#6b6480;--p1:#c026d3;--p2:#7c3aed;--ok:#15803d;--warn:#b45309;--bad:#dc2626;--blue:#2563eb;--grad:linear-gradient(135deg,#a855f7,#7c3aed 55%,#6d28d9);--sh:0 1px 3px rgba(40,20,90,.07),0 8px 24px -14px rgba(40,20,90,.18)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(900px 380px at 50% -12%,rgba(168,85,247,.14),transparent 70%),var(--bg);color:var(--tx);font:15px/1.5 Inter,system-ui,Segoe UI,Roboto,sans-serif;min-height:100vh}
+.demo{background:#fde68a;color:#5b3a00;text-align:center;font-size:.82rem;padding:6px 12px;font-weight:700}
+header{max-width:1000px;margin:0 auto;padding:22px 16px 6px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem}
+.brand img{width:34px;height:34px;border-radius:10px;box-shadow:0 4px 14px -4px rgba(124,58,237,.55)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:1000px;margin:10px auto 0;padding:0 16px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--sh)}
+.st b{display:block;font-size:1.5rem;color:var(--p2)}
+.st span{color:var(--mut);font-size:.78rem}
+nav{max-width:1000px;margin:16px auto 0;padding:0 16px;display:flex;gap:6px;flex-wrap:wrap}
+nav button{background:transparent;border:1px solid var(--line);color:var(--mut);border-radius:999px;padding:9px 16px;font:600 .85rem system-ui,Segoe UI,sans-serif;cursor:pointer}
+nav button.on{background:var(--grad);color:#fff;border-color:transparent}
+main{max-width:1000px;margin:0 auto;padding:16px 16px 90px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:12px}
+label.f{display:flex;flex-direction:column;gap:3px;font-size:.74rem;color:var(--mut);min-width:140px;flex:1}
+input,select,textarea{font:inherit;color:var(--tx);background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;width:100%}
+textarea{min-height:150px;line-height:1.5;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--p2);border-color:transparent}
+button.b{font:600 .88rem system-ui,Segoe UI,sans-serif;min-height:42px;padding:0 16px;border-radius:10px;border:1px solid var(--line);background:var(--card2);color:var(--tx);cursor:pointer}
+button.b:hover{border-color:var(--p2)}
+button.b.pri{background:var(--grad);color:#fff;border-color:transparent}
+button.b.wa{background:#16a34a;border-color:#16a34a;color:#fff}button.b.wa:hover{background:#15803d;border-color:#15803d}
+button.b.bad{color:var(--bad)}
+button.b:disabled{opacity:.4;cursor:not-allowed}
+.quota{background:var(--card);border:1px solid var(--line);box-shadow:var(--sh);border-radius:14px;padding:12px 16px;margin-bottom:14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.prog{flex:1;min-width:140px;height:8px;border-radius:99px;background:#e7def7;overflow:hidden}.prog i{display:block;height:100%;background:var(--grad)}
+.card{background:var(--card);border:1px solid var(--line);box-shadow:var(--sh);border-radius:18px;padding:18px;margin:14px 0}
+.card.fu{border-color:rgba(180,83,9,.45);background:#fffdf5}
+.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.name{font-size:1.1rem;font-weight:700}.meta{color:var(--mut);font-size:.86rem}
+.badge{font-size:.74rem;font-weight:700;border-radius:99px;padding:3px 12px;white-space:nowrap;height:fit-content}
+.alta{background:#dcfce7;color:var(--ok)}.média{background:#dbeafe;color:var(--blue)}.baixa{background:#fef3c7;color:var(--warn)}
+.tag{display:inline-block;font-size:.72rem;background:#efe7fb;border-radius:99px;padding:2px 10px;margin:2px 4px 2px 0;color:#5b21b6}
+.tag.fu{background:#fef3c7;color:var(--warn)}
+.why{margin:10px 0 2px;font-weight:600}.proof{font-size:.84rem;color:var(--mut)}.proof a{color:var(--blue)}
+details{margin:10px 0}summary{cursor:pointer;font-weight:600;min-height:30px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th{color:var(--mut);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:8px;border-bottom:1px solid var(--line)}
+td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+td select{padding:6px;min-width:110px}tr:hover td{background:#faf7ff}
+.empty{text-align:center;color:var(--mut);padding:44px 0}
+.note{color:var(--mut);font-size:.82rem}
+dialog{border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--tx);width:min(560px,calc(100% - 28px));padding:20px;max-height:92vh;overflow:auto}
+dialog::backdrop{background:rgba(25,12,50,.45)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.checks{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0}.checks label{font-size:.84rem;display:flex;gap:6px;align-items:center}.checks input{width:auto}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#1d1530;color:#fff;border:1px solid var(--p2);padding:12px 18px;border-radius:12px;z-index:99;max-width:92vw}
+.hidden{display:none!important}
+.legal{background:#fff7e0;border:1px solid rgba(180,83,9,.3);border-radius:12px;padding:10px 14px;font-size:.8rem;color:#7a5200;margin-bottom:14px}
+nav .grp{display:flex;gap:6px;flex-wrap:wrap;padding-right:10px;margin-right:4px;border-right:1px solid var(--line)}
+nav .grp:last-child{border-right:0}
+.dash{display:grid;gap:14px}
+.na{border-radius:18px;padding:18px 22px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;color:#fff;background:var(--grad);box-shadow:var(--sh)}
+.na.urgent{background:linear-gradient(135deg,#f97316,#dc2626)}.na.ok{background:linear-gradient(135deg,#34d399,#059669)}
+.na h2{margin:0;font-size:1.3rem}.na p{margin:4px 0 0;opacity:.95;max-width:560px}
+.na button{background:#fff;color:#4c1d95;border:0;border-radius:12px;padding:12px 22px;font:700 .95rem system-ui,Segoe UI,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.na button:hover{transform:translateY(-1px)}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.kpi{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;cursor:pointer;box-shadow:var(--sh);font:inherit;color:inherit;transition:.15s}
+.kpi:hover{transform:translateY(-2px);border-color:var(--p2)}.kpi.on{outline:2px solid var(--p2)}
+.kpi b{display:block;font-size:1.8rem;color:var(--p2);line-height:1.1}.kpi span{font-size:.82rem;font-weight:700}.kpi small{display:block;color:var(--mut);font-size:.72rem;margin-top:2px}
+.kpi.hot b{color:#dc2626}.kpi .mini{height:6px;background:#ece5f9;border-radius:99px;margin-top:6px;overflow:hidden}.kpi .mini i{display:block;height:100%;background:var(--grad)}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--sh)}
+.panel h3{margin:0 0 2px;font-size:1rem}.panel .sub{color:var(--mut);font-size:.8rem;margin-bottom:10px}
+.fun{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;padding:6px 4px;border-radius:10px;cursor:pointer;font:inherit;color:inherit;text-align:left}
+.fun:hover{background:#f6f2fd}.fun.on{background:#efe7fb}
+.fun .lb{width:128px;font-size:.82rem;font-weight:600}.fun .bar2{flex:1;height:22px;background:#f1ecfb;border-radius:8px;overflow:hidden}
+.fun .bar2 i{display:block;height:100%;background:var(--grad);border-radius:8px;min-width:4px;transition:width .4s}.fun .nn{width:30px;text-align:right;font-weight:800}
+.meter{height:12px;background:#ece5f9;border-radius:99px;overflow:hidden;margin:6px 0 12px}.meter i{display:block;height:100%;border-radius:99px;transition:width .4s}
+.meter.red i{background:#dc2626}.meter.amber i{background:#d97706}.meter.green i{background:#16a34a}
+.dr{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 6px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.dr:last-child{border-bottom:0}.dr .nm{font-weight:700;background:none;border:0;padding:0;color:var(--p2);cursor:pointer;font:700 .92rem system-ui,Segoe UI,sans-serif;text-align:left}
+.dr .rb{display:flex;gap:6px;flex-wrap:wrap}.dr .rb .b{min-height:32px;padding:0 12px}
+.flash{animation:flash 1.7s}@keyframes flash{0%,65%{box-shadow:0 0 0 5px rgba(124,58,237,.55)}100%{box-shadow:var(--sh)}}
+.how summary{cursor:pointer;color:var(--p2);font-weight:600;font-size:.85rem}.how{margin:0}.how ul{margin:6px 0 0 18px;padding:0;font-size:.85rem;color:#3a2f55}
+.strip{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#f6f2fd;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:0 0 14px;font-size:.85rem}
+svg .bar:hover{opacity:.7}
+.tgl{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:0 0 12px}
+.tgl button{border:0;background:var(--card);padding:7px 16px;font:600 .82rem system-ui,Segoe UI,sans-serif;cursor:pointer;color:var(--mut)}.tgl button.on{background:var(--grad);color:#fff}
+.board{display:grid;grid-template-columns:repeat(6,minmax(172px,1fr));gap:10px;overflow-x:auto;padding-bottom:8px;align-items:start}
+.col{background:#f6f2fd;border:1px solid var(--line);border-radius:14px;padding:8px;min-height:150px;transition:.12s}.col.over{outline:2px dashed var(--p2);background:#ede5fb}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}.ch b{font-size:.84rem}.cnt{background:#fff;border-radius:99px;padding:0 9px;font-weight:800;font-size:.8rem}
+.bc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin:6px 0;cursor:grab;box-shadow:var(--sh);font-size:.84rem}.bc:hover{border-color:var(--p2)}.bc.drag{opacity:.35}.bc b{display:block}
+.col.lost{margin-top:12px;background:#fdf4f3}.col.lost .bc{display:inline-block;margin:4px 6px 0 0;cursor:pointer}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}nav .grp{border-right:0;padding-right:0}}
+#gate{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(900px 420px at 50% -10%,rgba(168,85,247,.22),transparent 70%),var(--bg)}
+#gate.hidden{display:none}
+#gate form{width:min(380px,100%);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:0 20px 60px rgba(76,29,149,.18)}
+#gate h1{margin:10px 0 2px;font-size:1.35rem}#gate p{margin:0 0 16px;color:var(--mut);font-size:.9rem}
+#gate img{display:block;margin:0 auto}#gate .brandc{text-align:center}
+#gate label{display:block;font-size:.82rem;font-weight:600;margin:10px 0 4px}
+#gate input{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;font:inherit}
+#gate input:focus{outline:2px solid var(--p2);border-color:transparent}
+#gate button{width:100%;margin-top:18px;border:0;border-radius:12px;padding:13px;font:700 1rem system-ui,sans-serif;color:#fff;background:var(--grad);cursor:pointer}
+#gate button:disabled{opacity:.6;cursor:wait}
+#gate .err{color:var(--bad);font-size:.85rem;min-height:1.2em;margin-top:10px}
+#saveState{font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:99px;background:#e8f7ee;color:#15803d}
+#saveState.busy{background:#fef3c7;color:#92400e}#saveState.bad{background:#fee2e2;color:#b91c1c}
+dialog.wide{width:min(940px,calc(100% - 28px))}
+.drow{display:grid;grid-template-columns:1fr 80px 120px 34px;gap:6px;margin:4px 0}
+.drow.m{grid-template-columns:1fr 1fr 1fr 34px}
+.drow input{padding:8px}
+.dtot{text-align:right;font-size:.9rem;margin:8px 0}
+.runway{border-radius:14px;padding:12px 16px;margin:0 0 14px;font-size:.9rem;border:1px solid}
+.runway.red{background:#fdecea;border-color:#e8a29b;color:#7a1f16}.runway.amber{background:#fff7e0;border-color:#e3c36b;color:#6d4a00}.runway.green{background:#e7f6ec;border-color:#9fd3b0;color:#14532d}
+.stepper{display:flex;gap:6px;margin:10px 0 14px;flex-wrap:wrap}
+.stp{flex:1;min-width:84px;font-size:.74rem;color:var(--mut);text-align:center;padding:8px 4px;border-radius:10px;background:#f1ecfb;border:1px solid var(--line)}
+.stp.done{background:#e7f6ec;color:var(--ok);border-color:#bfe6cc}
+.stp.cur{background:var(--grad);color:#fff;border-color:transparent;font-weight:700}
+.chips2{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.chip2{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:999px;padding:6px 12px;font:600 .8rem system-ui,Segoe UI,sans-serif;cursor:pointer}
+.chip2.on{background:var(--grad);color:#fff;border-color:transparent}
+.tlw{max-height:250px;overflow:auto;border-left:2px solid #e2d8f6;padding-left:16px;margin:8px 0 12px}
+.tl{position:relative;padding:0 0 10px}
+.tl::before{content:"";position:absolute;left:-22px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--p2)}
+.tl b{font-size:.84rem}.tl span{color:var(--mut);font-size:.74rem;margin-left:8px}.tl p{margin:2px 0 0;font-size:.82rem;color:#3a2f55}
+.trackline{font-size:.82rem;color:#3a2f55;background:#f6f2fd;border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:8px 0}
+.endbadge{display:inline-block;background:#fee2e2;color:#b91c1c;font-weight:700;font-size:.78rem;border-radius:99px;padding:3px 12px;margin:4px 0}
+@media (max-width:640px){.stats{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}table thead{display:none}tr{display:block;border-bottom:1px solid var(--line);padding:6px 0}td{display:inline-block;border:0;padding:3px 8px}}
+</style>
+</head>
+<body>
+<div id="gate"><form id="gateForm" autocomplete="on">
+  <div class="brandc"><img src="logo.webp" alt="" width="52" height="52"><h1>Alpha Leads</h1><p>Área privada. Entre para continuar.</p></div>
+  <label for="gEmail">E-mail</label><input id="gEmail" name="email" type="email" autocomplete="username" required>
+  <label for="gPass">Palavra-passe</label><input id="gPass" name="password" type="password" autocomplete="current-password" required>
+  <div class="err" id="gErr" role="alert"></div>
+  <button type="submit" id="gBtn">Entrar</button>
+</form></div>
+<div class="demo hidden" id="demoBar">Existem leads de exemplo (fictícios). Nenhuma mensagem é enviada para eles.</div>
+<header>
+  <div class="brand"><img src="logo.webp" alt="" width="34" height="34"> Alpha Leads</div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="b pri" id="qcBtn" style="min-height:36px">+ Captura rápida</button><button class="b" id="briefBtn" style="min-height:36px">Resumo do dia</button><button class="b" id="syncBtn" style="min-height:36px"></button><span id="saveState" title="Os dados ficam guardados na base de dados">Guardado</span><button class="b" id="outBtn" style="min-height:36px">Sair</button></div>
+</header>
+<div class="stats" id="stats"></div>
+<nav id="tabs">
+  <div class="grp"><button data-t="painel" class="on">Painel</button><button data-t="hoje">Hoje</button><button data-t="acomp">Pipeline</button></div>
+  <div class="grp"><button data-t="fontes">Fontes</button><button data-t="radar">Radar</button><button data-t="importar">Importar</button></div>
+  <div class="grp"><button data-t="leads">Leads</button><button data-t="docs">Documentos</button><button data-t="optout">Não contactar</button><button data-t="config">Definições</button></div>
+</nav>
+<main id="view"></main>
+
+<dialog id="dlg"><form method="dialog" id="dform"></form></dialog>
+<div class="toast hidden" id="toast"></div>
+
+<script>
+/* ============ constantes ============ */
+const KEY = "alphaleads.v1";
+const SEG = {clinica:"Clínica / saúde",advocacia:"Advocacia",clima:"Climatização",estetica:"Estética / beleza",loja:"Loja online / criador",b2b:"Agência / B2B",outro:"Outro"};
+const SIG = {inbound:["Pediu contacto pelo site",6],asked:["Pediu o serviço publicamente",6],nosite:["Não tem site",3],slowsite:["Site lento ou desatualizado",2],igonly:["Só Instagram ou WhatsApp",2],newbiz:["Empresa aberta há menos de 12 meses",2],reviews:["Muitas avaliações no Google",1],prosite:["Já tem site profissional",-3]};
+const STAT = {novo:"Novo",contactado:"Contactado",reuniao:"Reunião marcada",proposta:"Proposta enviada",negociacao:"Negociação",ganho:"Ganho",perdido:"Perdido"};
+const FOLLOW_DAYS = 5, MAX_FOLLOWUPS = 2;
+
+/* ============ estado ============ */
+let S = emptyState(), started = false;
+const ui = { radar:{ market:"PT", city:"", seg:"clinica", mobile:true, withSite:false, results:null, sel:{}, busy:false, info:"" }, tab:"painel", drill:"acao", trackView:"board", src:{ market:"PT", svc:"site", period:"w" }, trackStage:"ALL", market:"ALL", segment:"ALL", q:"", status:"ALL", showAll:false };
+function emptyState(){ return { leads:[], optout:[], log:[], settings:{daily:25,sender:"Sandra"}, radar:{ searches:[], lastRun:"", max:20, auto:true } }; }
+function normalize(d){
+  const e = emptyState(), o = Object.assign(e, d || {});
+  o.settings = Object.assign({daily:25,sender:"Sandra"}, (d && d.settings) || {});
+  o.radar = Object.assign({ searches: [], lastRun: "", max: 20, auto: true }, (d && d.radar) || {});
+  return o;
+}
+/* ---- gravação na base de dados (Supabase). Nada de dados no navegador, só a sessão ---- */
+const TBL = "/rest/v1/panel_state";
+let rev = 0, dirty = false, pushing = false, pushTimer = null, locked = false;
+function setSaveState(kind, txt){ const e = $("#saveState"); if (!e) return; e.className = kind || ""; e.textContent = txt; }
+function save(){ ensureHistory(); if (locked) return; dirty = true; setSaveState("busy", "A guardar…"); clearTimeout(pushTimer); pushTimer = setTimeout(push, 700); }
+async function push(){
+  if (pushing || !dirty || locked) return; pushing = true; dirty = false;
+  try {
+    const token = await sbToken(), { url } = sbCfg();
+    const r = await fetch(url + TBL + "?id=eq.main&rev=eq." + rev, { method: "PATCH", headers: Object.assign({ Prefer: "return=representation" }, sbHeaders(token)), body: JSON.stringify({ data: S, rev: rev + 1, updated_at: new Date().toISOString() }) });
+    if (r.status === 401 || r.status === 403) throw Object.assign(new Error("auth"), { auth: true });
+    if (!r.ok) throw new Error("O servidor recusou a gravação (" + r.status + ").");
+    const rows = await r.json();
+    if (!rows.length) { locked = true; setSaveState("bad", "Conflito"); showConflict(); return; }
+    rev = rows[0].rev; setSaveState("", dirty ? "A guardar…" : "Guardado");
+  } catch (e) {
+    dirty = true;
+    if (e.auth || /sess/i.test(e.message)) { setSaveState("bad", "Sessão expirada"); showGate("A sessão expirou. Entre outra vez: nada foi perdido."); }
+    else { setSaveState("bad", "Não guardado"); clearTimeout(pushTimer); pushTimer = setTimeout(push, 8000); }
+  } finally { pushing = false; if (dirty && !locked && !pushTimer) pushTimer = setTimeout(push, 700); }
+}
+function showConflict(){
+  const g = $("#gate"); g.classList.remove("hidden");
+  g.innerHTML = '<form id="cf"><div class="brandc"><h1>Dados alterados noutro local</h1><p>Esta página ficou desatualizada porque guardou alterações noutro dispositivo ou separador. Para não perder nada, recarregue os dados do servidor.</p></div><button type="submit">Recarregar dados</button></form>';
+  $("#cf").onsubmit = e => { e.preventDefault(); location.reload(); };
+}
+async function loadRemote(){
+  const token = await sbToken(), { url } = sbCfg(), H = sbHeaders(token);
+  const r = await fetch(url + TBL + "?id=eq.main&select=data,rev", { headers: H });
+  if (!r.ok) throw new Error(r.status === 404 ? "Falta criar a tabela. Execute supabase/panel_state.sql no Supabase." : "Não foi possível ler os dados (" + r.status + ").");
+  let rows = await r.json();
+  if (!rows.length) {
+    let seed = emptyState();
+    try { const old = JSON.parse(localStorage.getItem(KEY)); if (old && old.leads && old.leads.length && confirm("Encontrei dados antigos guardados neste navegador. Quer enviá-los para a base de dados?")) seed = normalize(old); } catch (e) {}
+    const c = await fetch(url + TBL, { method: "POST", headers: Object.assign({ Prefer: "return=representation" }, H), body: JSON.stringify({ id: "main", data: seed, rev: 0 }) });
+    if (!c.ok) throw new Error("Não foi possível criar o registo (" + c.status + ").");
+    rows = await c.json();
+    try { localStorage.removeItem(KEY); } catch (e) {}
+  }
+  S = normalize(rows[0].data); rev = rows[0].rev;
+}
+const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const uid = () => Math.random().toString(36).slice(2,10) + Date.now().toString(36).slice(-4);
+const pad = n => String(n).padStart(2,"0");
+const iso = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const today = () => iso(new Date());
+const addDays = (s, n) => { const d = new Date(s + "T12:00:00"); d.setDate(d.getDate() + n); return iso(d); };
+function toast(msg){ const t = $("#toast"); t.textContent = msg; t.classList.remove("hidden"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.add("hidden"), 3800); }
+
+/* ============ pontuação ============ */
+const score = l => (l.signals || []).reduce((a, k) => a + (SIG[k] ? SIG[k][1] : 0), 0);
+const prio = s => s >= 5 ? "alta" : s >= 3 ? "média" : "baixa";
+function whyNow(l){
+  const parts = (l.signals || []).filter(k => SIG[k] && SIG[k][1] > 0).map(k => SIG[k][0].charAt(0).toLowerCase() + SIG[k][0].slice(1));
+  return parts.length ? "Porquê agora: " + parts.join(" · ") : "Sem sinais fortes: use só com mensagem muito personalizada.";
+}
+
+/* ============ telefone ============ */
+function normPhone(raw, market){
+  let d = String(raw || "").replace(/\D/g, ""); if (!d) return "";
+  if (d.startsWith("00")) d = d.slice(2);
+  if (market === "PT" && d.length === 9) d = "351" + d;
+  if (market === "BR" && (d.length === 10 || d.length === 11)) d = "55" + d;
+  return d;
+}
+function likelyLandline(p, market){
+  if (!p) return true;
+  if (p.startsWith("351")) return p.slice(3).startsWith("2") || p.slice(3).startsWith("3");
+  if (p.startsWith("55")) { const n = p.slice(4); return n.length === 8 || /^[2-5]/.test(n); }
+  return false;
+}
+
+/* ============ mensagens ============ */
+const OFFER = {
+  PT:{clinica:"páginas profissionais para clínicas, com marcação de consultas por WhatsApp",advocacia:"sites institucionais para escritórios de advocacia, com contacto direto por WhatsApp",clima:"páginas para empresas de climatização, com pedido de orçamento rápido",estetica:"páginas para estética e beleza, com marcações online",loja:"lojas online com pagamentos integrados",b2b:"sistemas e automações à medida",outro:"sites e landing pages à medida"},
+  BR:{clinica:"páginas profissionais para clínicas, com agendamento de consultas pelo WhatsApp",advocacia:"sites institucionais para escritórios de advocacia, com contato direto pelo WhatsApp",clima:"páginas para empresas de climatização, com pedido de orçamento rápido",estetica:"páginas para estética e beleza, com agendamento online",loja:"lojas virtuais com pagamentos integrados",b2b:"sistemas e automações sob medida",outro:"sites e landing pages sob medida"}
+};
+function observation(l){
+  const n = l.name, s = l.signals || [], pt = l.market !== "BR";
+  if (s.includes("asked")) return pt ? `Vi a sua publicação a pedir ajuda com ${l.wanted || "este tema"}.` : `Vi sua publicação pedindo ajuda com ${l.wanted || "este tema"}.`;
+  if (s.includes("nosite")) return pt ? `Reparei que a ${n} ainda não tem site.` : `Percebi que a ${n} ainda não tem site.`;
+  if (s.includes("slowsite")) return pt ? `Vi o site da ${n} e acho que há margem para o deixar mais rápido e mais atrativo no telemóvel.` : `Vi o site da ${n} e acho que dá para deixá-lo mais rápido e mais atrativo no celular.`;
+  if (s.includes("igonly")) return pt ? `Vi que a ${n} divulga o negócio pelo Instagram.` : `Vi que a ${n} divulga o negócio pelo Instagram.`;
+  if (s.includes("newbiz")) return pt ? `Vi que a ${n} abriu há pouco tempo. Parabéns!` : `Vi que a ${n} abriu há pouco tempo. Parabéns!`;
+  return pt ? `Conheci a ${n} e gostei do trabalho.` : `Conheci a ${n} e gostei do trabalho.`;
+}
+function replyMessage(l, me){
+  const first = (l.name || "").trim().split(/\s+/)[0] || "", L = l.lang || "pt", br = l.market === "BR";
+  const need = l.need ? (L === "en" ? ` about "${l.need}"` : L === "es" ? ` sobre "${l.need}"` : ` sobre "${l.need}"`) : "";
+  if (L === "en") return `Hi ${first}! This is ${me} from Alpha Tech Solutions. Thank you for your request on our website${need}.\n\nWhen would be a good time to talk, so I can better understand what you need?`;
+  if (L === "es") return `¡Hola, ${first}! Soy ${me}, de Alpha Tech Solutions. Gracias por tu solicitud en nuestro sitio${need}.\n\n¿Cuándo te viene bien que hablemos para entender mejor lo que necesitas?`;
+  return br
+    ? `Olá, ${first}! Aqui é a ${me}, da Alpha Tech Solutions. Obrigada pelo seu pedido no nosso site${need}.\n\nQuando é bom para você conversarmos, para eu entender melhor o que precisa?`
+    : `Olá, ${first}! Aqui é a ${me}, da Alpha Tech Solutions. Obrigada pelo seu pedido no nosso site${need}.\n\nQuando lhe dá jeito falarmos, para eu perceber melhor o que precisa?`;
+}
+function buildMessage(l, kind){
+  const pt = l.market !== "BR", me = S.settings.sender || "Sandra", offer = (l.service && SVC_OFFER[pt ? "PT" : "BR"][l.service]) || OFFER[pt ? "PT" : "BR"][l.segment] || OFFER[pt ? "PT" : "BR"].outro;
+  if (l.inbound && l.status === "novo") return replyMessage(l, me);
+  if (kind === "follow") return pt
+    ? `Olá! Volto a escrever só para saber se chegou a ver a minha mensagem sobre ${offer}.\n\nSe não fizer sentido neste momento, sem problema: diga-me e não volto a contactar.\n\n${me} · Alpha Tech Solutions`
+    : `Olá! Volto a escrever só para saber se você chegou a ver minha mensagem sobre ${offer}.\n\nSe não fizer sentido agora, sem problema: é só me avisar que eu não volto a entrar em contato.\n\n${me} · Alpha Tech Solutions`;
+  return pt
+    ? `Olá! Sou a ${me}, da Alpha Tech Solutions.\n\n${observation(l)}\n\nFazemos ${offer}. Posso enviar-lhe um exemplo, sem compromisso?\n\nSe preferir não receber mensagens nossas, diga-me e retiro o seu contacto.`
+    : `Olá! Aqui é a ${me}, da Alpha Tech Solutions.\n\n${observation(l)}\n\nFazemos ${offer}. Posso te mandar um exemplo, sem compromisso?\n\nSe preferir não receber mais mensagens, é só me avisar que eu retiro o seu contato.`;
+}
+const msgKind = l => (l.status === "contactado" ? "follow" : "first");
+
+/* ============ regras ============ */
+const isOpt = l => l.optout || S.optout.some(o => o.phone && l.phone && o.phone === l.phone);
+const sentToday = () => S.log.filter(x => x.date === today() && x.action === "sent").length;
+function match(l){
+  if (ui.market !== "ALL" && l.market !== ui.market) return false;
+  if (ui.segment !== "ALL" && l.segment !== ui.segment) return false;
+  return true;
+}
+function todayLists(){
+  const t = today(), base = S.leads.filter(l => !isOpt(l) && match(l));
+  const fu = base.filter(l => l.status === "contactado" && !l.replyResult && l.nextContact && l.nextContact <= t && (l.followups || 0) < MAX_FOLLOWUPS).sort((a, b) => a.nextContact.localeCompare(b.nextContact));
+  const inb = base.filter(l => l.inbound && l.status === "novo").sort((a, b) => (b.created || "").localeCompare(a.created || ""));
+  const nv = base.filter(l => l.status === "novo" && !l.inbound).sort((a, b) => score(b) - score(a));
+  return { inb, fu, nv };
+}
+
+/* ============ histórico, registo de contactos e regras anti-reenvio ============ */
+const COOL = { semresposta: 90, semInteresse: 180, outro: 180 };   // dias de descanso, conforme o motivo da perda
+const PIPE = ["novo", "contactado", "reuniao", "proposta", "negociacao", "ganho"];
+const ACTIVE = ["contactado", "reuniao", "proposta", "negociacao"];
+const isEnded = l => l.status === "perdido";
+const coolOf = l => COOL[l.lostCode] || 180;
+const HTYPE = { created:"Lead criado", first:"1.ª mensagem enviada", follow:"Follow-up enviado", reply:"Resposta enviada", chat:"Mensagem enviada", manual:"Contactada (registo manual)", yes:"Resposta recebida", no:"Resposta recebida", stage:"Estado alterado", optout:"Pediu para não ser contactada", note:"Nota", doc:"Documento gerado", react:"Reativada" };
+const SENT_TYPES = ["first", "follow", "reply", "chat", "manual"];
+const fmtD = s => { if (!s) return "—"; const [y, m, d] = String(s).slice(0, 10).split("-"); return `${d}/${m}/${y}`; };
+const fmtT = iso => { const d = new Date(iso); return isNaN(d) ? "" : `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`; };
+function hist(l, type, text){ (l.history = l.history || []).push({ t: new Date().toISOString(), type, text: text || "" }); }
+function ensureHistory(){
+  for (const l of S.leads) if (!l.history) {
+    l.history = [{ t: (l.created ? l.created + "T09:00:00" : new Date().toISOString()), type: "created", text: l.inbound ? "Pedido recebido pelo site" : l.radar ? "Encontrado no Radar" : l.demo ? "Exemplo fictício" : "Adicionado" }];
+    if (l.lastContact) l.history.push({ t: l.lastContact + "T12:00:00", type: "first", text: "1.ª mensagem enviada (registo anterior)" });
+  }
+}
+const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+function keysFor(o){
+  const k = [], ph = String(o.phone || "").replace(/\D/g, "");
+  if (ph.length >= 8) k.push("p:" + ph.slice(-9));
+  if (o.name) k.push("n:" + norm(o.name) + "|" + norm(o.city));
+  const ig = String(o.instagram || "").trim().toLowerCase().replace(/^@/, "").replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/[\/?#].*$/, "");
+  if (ig) k.push("i:" + ig);
+  const dom = String(o.site || "").trim().toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/[\/?#].*$/, "");
+  if (dom && dom.includes(".")) k.push("d:" + dom);
+  return k;
+}
+const hits = (a, b) => a.some(x => b.includes(x));
+function findDuplicate(o, ignoreId){ const k = keysFor(o); return S.leads.find(l => l.id !== ignoreId && hits(keysFor(l), k)); }
+function registryFind(o){ const k = keysFor(o); return S.registry.find(r => hits(r.keys, k)); }
+function registerContact(l, optout, when){
+  if (l.demo) return;
+  const k = keysFor(l), r = S.registry.find(x => hits(x.keys, k)), t = when || today();
+  if (r) { r.keys = [...new Set([...r.keys, ...k])]; if (optout) r.optout = true; else { r.last = t; r.n++; } }
+  else S.registry.push({ keys: k, name: l.name, first: t, last: t, n: optout ? 0 : 1, optout: !!optout });
+}
+const knownLead = c => !!findDuplicate(c) || !!registryFind(c) || S.optout.some(o => o.phone && c.phone && o.phone === c.phone);
+
+/* a regra principal: pode enviar agora a esta empresa? */
+function sendGate(l){
+  const t = today();
+  if (isOpt(l)) return { ok: false, reason: "Esta empresa pediu para não ser contactada." };
+  if (l.status === "novo") {
+    if (l.inbound) return { ok: true, kind: "reply" };
+    const r = !l.reactivated && registryFind(l);
+    if (r) return { ok: false, reason: `Esta empresa já foi contactada em ${fmtD(r.last)}${r.n > 1 ? " (" + r.n + " mensagens)" : ""}. Para não a incomodar, o reenvio não é permitido.` };
+    return { ok: true, kind: "first" };
+  }
+  if (l.status === "contactado" && l.replyResult === "sim") return { ok: true, kind: "chat" };
+  if (l.status === "contactado") {
+    if ((l.followups || 0) >= MAX_FOLLOWUPS) return { ok: false, reason: "Já enviou o máximo de follow-ups a esta empresa. Aguarde resposta: se não houver, é arquivada como 'Sem resposta'." };
+    if (l.nextContact && l.nextContact > t) return { ok: false, reason: `Contactada em ${fmtD(l.lastContact)}. O próximo follow-up só é permitido a ${fmtD(l.nextContact)}.` };
+    return { ok: true, kind: "follow" };
+  }
+  if (["reuniao", "proposta", "negociacao", "ganho"].includes(l.status)) return { ok: true, kind: "chat" };
+  if (l.blockedUntil && l.blockedUntil > t) return { ok: false, reason: `Ciclo concluído (${l.lostReason || STAT[l.status]}). Só volta a poder contactar esta empresa a partir de ${fmtD(l.blockedUntil)}.` };
+  return { ok: false, reason: `Estado "${STAT[l.status]}". Para voltar a contactar, use "Reativar" no Acompanhamento.` };
+}
+function recordSend(l, gate, via){
+  const t = today(); l.firstContact = l.firstContact || t; l.lastContact = t;
+  if (gate.kind === "follow") l.followups = (l.followups || 0) + 1;
+  else if (["first", "reply", "manual"].includes(gate.kind)) { l.followups = 0; l.status = "contactado"; }
+  if (l.status === "contactado") l.nextContact = (l.followups || 0) < MAX_FOLLOWUPS ? addDays(t, FOLLOW_DAYS) : "";
+  const label = { first:"1.ª mensagem enviada", follow:"Follow-up " + (l.followups || 0) + " enviado", reply:"Resposta ao pedido do site enviada", chat:"Mensagem enviada (conversa em curso)", manual:"Contactada (registo manual)" }[gate.kind];
+  hist(l, gate.kind, label + (via ? " por " + via : ""));
+  registerContact(l); delete l.draft;
+  logAct(l, ((gate.kind === "first" && !l.inbound) || gate.kind === "follow") ? "sent" : "reply");
+  save(); render();
+}
+function stage(l, status, text, type){
+  const old = l.status; l.status = status;
+  if (status !== "contactado") l.nextContact = "";
+  if (status === "perdido") { if (!l.lostCode) l.lostCode = "outro"; if (!l.blockedUntil || l.blockedUntil <= today()) l.blockedUntil = addDays(today(), coolOf(l)); } else l.blockedUntil = "";
+  if (status === "proposta" && !l.proposalAt) l.proposalAt = today();
+  if (status === "ganho" && !l.wonAt) l.wonAt = today();
+  hist(l, type || "stage", text || ((STAT[old] || old) + " → " + STAT[status]));
+  save(); render();
+}
+function reactivate(l){
+  const t = today(), early = l.blockedUntil && l.blockedUntil > t;
+  const msg = early ? `Esta empresa está em descanso até ${fmtD(l.blockedUntil)} para não ser incomodada.\n\nReativar mesmo assim não é recomendado. Quer mesmo reativar "${l.name}"?` : `Reativar "${l.name}" para um novo contacto?`;
+  if (!confirm(msg)) return false;
+  l.status = "novo"; l.followups = 0; l.nextContact = ""; l.blockedUntil = ""; l.replyResult = ""; l.reactivated = t; delete l.lostReason; delete l.lostCode;
+  hist(l, "react", early ? "Reativada antes do fim do descanso" : "Reativada após o período de descanso"); save(); render(); return true;
+}
+function housekeeping(){
+  const t = today(); let n = 0;
+  for (const l of S.leads) if (l.status === "contactado" && !l.replyResult && (l.followups || 0) >= MAX_FOLLOWUPS && l.lastContact && l.lastContact <= addDays(t, -7)) {
+    l.status = "perdido"; l.lostCode = "semresposta"; l.lostReason = "Sem resposta"; l.nextContact = ""; l.blockedUntil = addDays(t, COOL.semresposta);
+    hist(l, "stage", `Sem resposta após ${1 + (l.followups || 0)} mensagens. Ciclo concluído, descanso até ${fmtD(l.blockedUntil)}.`); n++;
+  }
+  if (n) save(); return n;
+}
+function migrate(){
+  S.registry = S.registry || []; S.log = S.log || []; S.optout = S.optout || [];
+  S.radar = Object.assign({ searches: [], lastRun: "", max: 20, auto: true }, S.radar || {});
+  ensureHistory();
+  for (const l of S.leads) {   // estados antigos -> novo pipeline
+    if (l.status === "respondeu") { l.status = "contactado"; l.replyResult = l.replyResult || "sim"; }
+    else if (l.status === "orcamento") l.status = "proposta";
+    else if (l.status === "fechado") l.status = "ganho";
+    else if (l.status === "semresposta") { l.status = "perdido"; l.lostCode = "semresposta"; l.lostReason = l.lostReason || "Sem resposta"; }
+    if (l.status === "perdido" && !l.lostCode) l.lostCode = l.lostReason === "Sem interesse" ? "semInteresse" : "outro";
+  }
+  for (const l of S.leads) {
+    if (l.status !== "novo" && !l.firstContact) l.firstContact = l.lastContact || l.created || "";
+    if (l.lastContact && !l.demo && !registryFind(l)) registerContact(l, false, l.lastContact);
+  }
+  housekeeping(); save();
+}
+/* ---- lembretes (4 regras, prazos configuráveis) e autonomia ---- */
+const REM_DEFAULT = { noContact: 3, proposal: 7, meetingAhead: 1, runwayWarn: 6, minLeads: 5 };
+const remCfg = () => Object.assign({}, REM_DEFAULT, S.settings.rem || {});
+function computeReminders(){
+  const c = remCfg(), t = today(), out = { noContact: [], proposal: [], meeting: [], follow: [] };
+  for (const l of S.leads) {
+    if (l.demo || isOpt(l) || !ACTIVE.includes(l.status)) continue;
+    const last = l.lastContact || l.firstContact || l.created, conv = l.status !== "contactado" || l.replyResult === "sim";
+    if (l.status === "proposta") {
+      const since = l.proposalAt || last;
+      if (since && daysAgo(since) >= c.proposal) { out.proposal.push({ l, text: `Proposta sem resposta há ${daysAgo(since)} dias` }); continue; }
+    }
+    if (l.status === "reuniao" && l.meetingAt) {
+      const diff = -daysAgo(l.meetingAt);
+      if (diff < 0) out.meeting.push({ l, text: `A reunião era a ${fmtT(l.meetingAt)}: registe o resultado` });
+      else if (diff === 0) out.meeting.push({ l, text: `Reunião hoje, ${fmtT(l.meetingAt).slice(11)}` });
+      else if (diff === c.meetingAhead) out.meeting.push({ l, text: diff === 1 ? `Reunião amanhã, ${fmtT(l.meetingAt).slice(11)}` : `Reunião em ${diff} dias` });
+    }
+    if (l.status === "contactado" && !l.replyResult && l.nextContact && l.nextContact <= t && (l.followups || 0) < MAX_FOLLOWUPS) { out.follow.push({ l, text: "Follow-up necessário" }); continue; }
+    if (conv && last && daysAgo(last) >= c.noContact && !out.meeting.some(x => x.l === l)) out.noContact.push({ l, text: `Sem contacto há ${daysAgo(last)} dias` });
+  }
+  return out;
+}
+const reminderCount = r => r.noContact.length + r.proposal.length + r.meeting.length + r.follow.length;
+function reminderSummary(r){
+  r = r || computeReminders(); const parts = [];
+  if (r.noContact.length) parts.push(`${r.noContact.length} lead(s) sem contacto`);
+  if (r.proposal.length) parts.push(`${r.proposal.length} proposta(s) sem resposta`);
+  if (r.meeting.length) parts.push(`${r.meeting.length} reunião(ões)`);
+  if (r.follow.length) parts.push(`${r.follow.length} follow-up(s)`);
+  return parts.length ? "Hoje: " + parts.join(", ") : "Hoje: nada em atraso.";
+}
+function autonomy(){
+  const t = today(); let weeks = 0, projects = 0;
+  for (const l of S.leads) if (!l.demo && l.status === "ganho" && l.deal && +l.deal.weeks > 0) {
+    const start = l.deal.start || l.wonAt || t, elapsed = Math.max(0, (new Date(t + "T12:00:00") - new Date(start + "T12:00:00")) / 604800000);
+    const left = Math.max(0, +l.deal.weeks - elapsed); if (left > 0) { weeks += left; projects++; }
+  }
+  const inContact = S.leads.filter(l => !l.demo && !isOpt(l) && ACTIVE.includes(l.status)).length, c = remCfg();
+  const lowW = weeks < c.runwayWarn, lowL = inContact < c.minLeads;
+  return { weeks: Math.round(weeks * 10) / 10, projects, inContact, level: lowW && lowL ? "red" : (lowW || lowL) ? "amber" : "green" };
+}
+function runwayHtml(){
+  const a = autonomy(), msg = { red: "O pipeline está a ficar curto.", amber: "Atenção ao pipeline.", green: "Pipeline saudável." }[a.level];
+  const hint = a.level === "green" ? "" : a.weeks < remCfg().runwayWarn && a.inContact < remCfg().minLeads ? " Convém contactar mais empresas esta semana." : a.inContact < remCfg().minLeads ? " Há poucas oportunidades em contacto." : " Há pouco trabalho contratado à frente.";
+  return `<div class="runway ${a.level}"><b>${msg}</b> Tem <b>${a.weeks} semanas</b> de trabalho contratado${a.projects ? ` (${a.projects} projeto(s))` : ""} e <b>${a.inContact} oportunidades</b> em contacto.${hint}</div>`;
+}
+function remindersHtml(){
+  const r = computeReminders(), n = reminderCount(r);
+  if (!n) return `<div class="card" style="margin:0 0 14px"><b>Lembretes de hoje</b><p class="note" style="margin:4px 0 0">Nada em atraso. Bom trabalho!</p></div>`;
+  const grp = (title, arr) => arr.length ? `<div style="margin-top:8px"><b>${title} (${arr.length})</b>${arr.map(x => `<div class="note" style="margin:2px 0"><button class="b" style="min-height:28px;padding:0 10px" data-oid="${x.l.id}">${esc(x.l.name)}</button> ${esc(x.text)}</div>`).join("")}</div>` : "";
+  return `<div class="card" style="margin:0 0 14px;border-color:rgba(180,83,9,.4);background:#fffdf5"><b>Lembretes de hoje</b> <span class="note">${esc(reminderSummary(r))}</span>${grp("Reuniões", r.meeting)}${grp("Propostas sem resposta", r.proposal)}${grp("Leads sem contacto", r.noContact)}${grp("Follow-ups necessários", r.follow)}</div>`;
+}
+const msgCount = l => (l.history || []).filter(h => SENT_TYPES.includes(h.type)).length;
+const replyLabel = l => l.replyResult === "sim" ? "Sim, interessada" : l.replyResult === "nao" ? "Não" : l.status === "contactado" ? "Aguardando" : "—";
+const daysAgo = d => Math.floor((new Date(today() + "T12:00:00") - new Date(String(d).slice(0, 10) + "T12:00:00")) / 86400000);
+function nextStep(l){
+  const t = today();
+  switch (l.status) {
+    case "contactado": return l.replyResult === "sim" ? "Marcar reunião" : l.nextContact ? (l.nextContact <= t ? "Follow-up hoje" : "Follow-up a " + fmtD(l.nextContact)) : "Aguardar resposta";
+    case "reuniao": return l.meetingAt ? "Reunião a " + fmtT(l.meetingAt) : "Definir a data da reunião";
+    case "proposta": return l.proposalAt ? `Proposta enviada há ${daysAgo(l.proposalAt)} dia(s): aguardar resposta` : "Aguardar resposta";
+    case "negociacao": return "Fechar a negociação";
+    case "ganho": return l.deal && +l.deal.weeks ? `Entregar o projeto (${l.deal.weeks} semanas)` : "Cliente";
+    case "perdido": return l.blockedUntil && l.blockedUntil > t ? "Descanso até " + fmtD(l.blockedUntil) : "Pode reativar";
+  }
+  return "—";
+}
+function trackLine(l){
+  if (!l.lastContact) return "";
+  return `<div class="trackline">Contactada em <b>${fmtD(l.firstContact || l.lastContact)}</b> · último contacto <b>${fmtD(l.lastContact)}</b> · ${msgCount(l)} mensagem(ns) · Resposta: <b>${esc(replyLabel(l))}</b>${l.nextContact ? ` · próximo follow-up <b>${fmtD(l.nextContact)}</b>` : ""}${l.meetingAt && l.status === "reuniao" ? ` · reunião a <b>${esc(fmtT(l.meetingAt))}</b>` : ""}${isEnded(l) && l.blockedUntil ? ` · descanso até <b>${fmtD(l.blockedUntil)}</b>` : ""}</div>`;
+}
+
+/* ============ painel interativo ============ */
+const dashLeads = () => { const real = S.leads.filter(l => !l.demo); return real.length ? real : S.leads; };
+function goCard(id){
+  ui.market = "ALL"; ui.segment = "ALL"; ui.tab = "hoje"; render();
+  const c = document.querySelector(`.card[data-id="${id}"]`);
+  if (c) { c.scrollIntoView({ behavior: "smooth", block: "center" }); c.classList.add("flash"); setTimeout(() => c.classList.remove("flash"), 1900); }
+  else { const l = byId(id); if (l) showLead(l); }
+}
+function nextAction(){
+  const base = dashLeads(), t = today(), r = computeReminders(), left = Math.max(0, S.settings.daily - sentToday());
+  const inb = base.filter(l => l.inbound && l.status === "novo" && !isOpt(l)), novos = base.filter(l => l.status === "novo" && !l.inbound && !isOpt(l)), names = a => a.slice(0, 3).map(x => (x.l || x).name).join(", ") + (a.length > 3 ? "…" : "");
+  const mt = r.meeting.filter(x => x.l.meetingAt && x.l.meetingAt.slice(0, 10) <= t);
+  if (!S.leads.length) return { tone: "", title: "Comece por encontrar os primeiros leads", text: "Use a captura rápida, as pesquisas prontas em Fontes, o Radar de mapas ou importe uma lista.", label: "Abrir Fontes", run: () => { ui.tab = "fontes"; render(); } };
+  if (mt.length) return { tone: "urgent", title: `${mt.length} reunião(ões) hoje ou por registar`, text: names(mt), label: "Ver reuniões", run: () => { ui.drill = "lembretes"; render(); $("#drill").scrollIntoView({ behavior: "smooth" }); } };
+  if (inb.length) return { tone: "urgent", title: `${inb.length} pedido(s) do site à espera de resposta`, text: "Responda primeiro: são pessoas que pediram contacto. " + names(inb), label: "Responder agora", run: () => goCard(inb[0].id) };
+  if (r.proposal.length) return { tone: "urgent", title: `${r.proposal.length} proposta(s) sem resposta`, text: names(r.proposal), label: "Fazer follow-up", run: () => { ui.drill = "lembretes"; render(); $("#drill").scrollIntoView({ behavior: "smooth" }); } };
+  if (r.follow.length) return { tone: "", title: `${r.follow.length} follow-up(s) para hoje`, text: names(r.follow), label: "Ver follow-ups", run: () => { ui.tab = "hoje"; render(); } };
+  if (novos.length && left > 0) return { tone: "", title: `Contacte os próximos ${Math.min(left, 5)} leads novos`, text: `Restam ${left} mensagens hoje. Os melhores estão no topo da lista.`, label: "Ir para Hoje", run: () => { ui.tab = "hoje"; render(); } };
+  return { tone: "ok", title: "Tudo em dia", text: "Nada em atraso. Aproveite para procurar novos clientes.", label: "Abrir Fontes", run: () => { ui.tab = "fontes"; render(); } };
+}
+function drillItems(key){
+  const base = dashLeads(), r = computeReminders(), t = today(), row = (l, sub, extra) => ({ l, sub, extra: extra || [] });
+  const rem = (arr, extra) => arr.map(x => row(x.l, x.text, extra));
+  const inb = () => base.filter(l => l.inbound && l.status === "novo" && !isOpt(l)).map(l => row(l, (l.need || "Pediu contacto") + (l.inboundMsg ? ": " + l.inboundMsg.slice(0, 60) : ""), [["card", "Responder"]]));
+  if (key === "acao") { const items = [...inb(), ...rem(r.meeting), ...rem(r.proposal), ...rem(r.follow, [["card", "Contactar"], ["snooze", "Adiar 2 dias"]]), ...rem(r.noContact)]; return { title: "O que precisa de atenção", note: items.length ? "Clique no nome para abrir a ficha." : "Nada em atraso. Bom trabalho!", items }; }
+  if (key === "site") return { title: "Pedidos do site", note: "Pessoas que pediram contacto pelo formulário.", items: inb() };
+  if (key === "lembretes") return { title: "Lembretes de hoje", note: "As quatro regras: reuniões, propostas, follow-ups e leads sem contacto.", items: [...rem(r.meeting), ...rem(r.proposal), ...rem(r.follow, [["card", "Contactar"], ["snooze", "Adiar 2 dias"]]), ...rem(r.noContact)] };
+  if (key === "novos") return { title: "Por contactar", note: "Ordenados por prioridade. O botão leva ao cartão com a mensagem pronta.", items: base.filter(l => l.status === "novo" && !l.inbound && !isOpt(l)).sort((a, b) => score(b) - score(a)).slice(0, 20).map(l => row(l, whyNow(l), [["card", "Contactar"]])) };
+  if (key === "hoje") { const ids = [...new Set(S.log.filter(x => x.date === t && (x.action === "sent" || x.action === "reply")).map(x => x.id))]; return { title: "Enviadas hoje", note: `${sentToday()} de ${S.settings.daily} do limite diário.`, items: ids.map(id => byId(id)).filter(Boolean).map(l => row(l, "Contactada hoje · " + nextStep(l))) }; }
+  if (key === "conversa") return { title: "Em conversa", note: "Responderam e seguem em frente.", items: base.filter(l => (l.replyResult === "sim" || ["reuniao", "proposta", "negociacao"].includes(l.status)) && l.status !== "ganho" && !isEnded(l)).map(l => row(l, nextStep(l))) };
+  if (key === "ganhos") return { title: "Ganhos", note: "Negócios fechados.", items: base.filter(l => l.status === "ganho").map(l => row(l, (l.deal && l.deal.value !== "" && l.deal.value !== undefined ? "valor " + l.deal.value : "") + (l.deal && +l.deal.weeks ? " · " + l.deal.weeks + " semanas" : ""))) };
+  if (key.startsWith("stage:")) { const k = key.slice(6); return { title: STAT[k] || k, note: "Empresas nesta fase.", items: base.filter(l => l.status === k).map(l => row(l, nextStep(l), k === "novo" ? [["card", "Contactar"]] : [])) }; }
+  return { title: "", note: "", items: [] };
+}
+function activityData(){
+  const days = Array.from({ length: 14 }, (_, i) => addDays(today(), i - 13)), vals = days.map(d => S.log.filter(x => x.date === d && (x.action === "sent" || x.action === "reply")).length);
+  return { days, vals, week: vals.slice(7).reduce((a, b) => a + b, 0), prev: vals.slice(0, 7).reduce((a, b) => a + b, 0) };
+}
+function activitySvg(){
+  const { days, vals } = activityData(), max = Math.max(5, ...vals), W = 560, bw = W / 14, wk = ["D", "S", "T", "Q", "Q", "S", "S"];
+  const bars = vals.map((v, i) => { const h = Math.round(v / max * 96), x = i * bw + 6, w = bw - 12, y = 118 - h; return `<g class="bar"><rect x="${x}" y="${y}" width="${w}" height="${Math.max(h, 3)}" rx="5" fill="${i === 13 ? "#7c3aed" : "#c4b5fd"}"><title>${fmtD(days[i])}: ${v} mensagem(ns)</title></rect><text x="${x + w / 2}" y="${y - 5}" text-anchor="middle" font-size="11" fill="#6b6480">${v || ""}</text><text x="${x + w / 2}" y="136" text-anchor="middle" font-size="10" fill="#9a92ad">${wk[new Date(days[i] + "T12:00:00").getDay()]}</text></g>`; }).join("");
+  return `<svg viewBox="0 0 ${W} 144" style="width:100%;height:auto" role="img" aria-label="Mensagens enviadas nos últimos 14 dias">${bars}</svg>`;
+}
+function drillHtml(){
+  const d = drillItems(ui.drill), btn = { card: "Contactar", snooze: "Adiar 2 dias" };
+  return `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><div><h3>${esc(d.title)}</h3><div class="sub">${esc(d.note)}</div></div>${ui.drill !== "acao" ? '<button class="b" data-drill="acao">← O que precisa de atenção</button>' : ""}</div>` +
+    (d.items.length ? d.items.map(it => `<div class="dr" data-id="${it.l.id}"><div><button class="nm" data-open="${it.l.id}">${esc(it.l.name)}</button> <span class="note">${esc(SEG[it.l.segment] || "")} · ${esc(it.l.city || "")}</span><div class="note">${esc(it.sub || "")}</div></div><div class="rb"><span class="tag">${esc(STAT[it.l.status])}</span>${it.extra.map(([k, lb]) => `<button class="b" data-dx="${k}" data-lid="${it.l.id}">${esc(lb)}</button>`).join("")}<button class="b" data-open="${it.l.id}">Abrir</button></div></div>`).join("") : '<p class="note">Nada para mostrar aqui.</p>');
+}
+function viewPainel(){
+  const base = dashLeads(), r = computeReminders(), a = autonomy(), c = remCfg(), na = nextAction(); ui.na = na;
+  const left = Math.max(0, S.settings.daily - sentToday()), inb = base.filter(l => l.inbound && l.status === "novo" && !isOpt(l)).length, novos = base.filter(l => l.status === "novo" && !l.inbound && !isOpt(l)).length;
+  const conv = base.filter(l => (l.replyResult === "sim" || ["reuniao", "proposta", "negociacao"].includes(l.status)) && l.status !== "ganho" && !isEnded(l)).length, wins = base.filter(l => l.status === "ganho"), winVal = wins.reduce((s0, l) => s0 + (+((l.deal || {}).value) || 0), 0);
+  const nRem = reminderCount(r), pct = Math.min(100, sentToday() / S.settings.daily * 100);
+  const K = [["site", inb, "Pedidos do site", inb ? "à espera de resposta" : "nenhum por responder", inb > 0], ["lembretes", nRem, "Lembretes", "reuniões, propostas, follow-ups", nRem > 0], ["novos", novos, "Por contactar", `${left} mensagens disponíveis hoje`, false], ["hoje", `${sentToday()} / ${S.settings.daily}`, "Enviadas hoje", "clique para ver quais", false, pct], ["conversa", conv, "Em conversa", "responderam e avançam", false], ["ganhos", wins.length, "Ganhos", winVal ? "valor total " + winVal.toLocaleString("pt-PT") : "negócios fechados", false]];
+  const counts = Object.fromEntries(Object.keys(STAT).map(k => [k, base.filter(l => l.status === k).length])), max = Math.max(1, ...PIPE.map(k => counts[k]));
+  const contacted = base.filter(l => l.status !== "novo").length, replied = base.filter(l => l.replyResult === "sim" || l.replyResult === "nao" || ["reuniao", "proposta", "negociacao", "ganho"].includes(l.status)).length, rate = contacted ? Math.round(replied / contacted * 100) : 0, winRate = contacted ? Math.round(wins.length / contacted * 100) : 0;
+  const act = activityData(), diff = act.week - act.prev, wl = Math.min(100, a.weeks / c.runwayWarn * 100), ll = Math.min(100, a.inContact / c.minLeads * 100);
+  const lvl = x => x >= 100 ? "green" : x >= 50 ? "amber" : "red";
+  const demoOnly = S.leads.length && !S.leads.some(l => !l.demo);
+  return `<div class="dash">${demoOnly ? '<div class="legal">Está a ver <b>exemplos fictícios</b>. Em Definições pode removê-los.</div>' : ""}
+  <div class="na ${na.tone}"><div><div style="font-size:.78rem;opacity:.9;font-weight:700;letter-spacing:.06em">PRÓXIMA AÇÃO</div><h2>${esc(na.title)}</h2><p>${esc(na.text)}</p></div><button id="naGo">${esc(na.label)} →</button></div>
+  <details class="how"><summary>Como ler este painel</summary><ul><li>O quadro colorido de cima diz <b>o que fazer agora</b>. O botão leva-o lá.</li><li>Os <b>números</b> clicam-se: abrem em baixo a lista de quem está por trás.</li><li>O <b>funil</b> mostra em que fase estão as empresas. Clique numa fase para ver quais.</li><li>A <b>autonomia</b> compara o trabalho que já vendeu com as conversas em curso: se ambos forem poucos, é hora de captar mais.</li></ul></details>
+  <div class="kpis">${K.map(([k, n, lb, sub, hot, bar]) => `<button class="kpi ${hot ? "hot" : ""} ${ui.drill === k ? "on" : ""}" data-drill="${k}" title="Clique para ver a lista"><b>${esc(n)}</b><span>${esc(lb)}</span><small>${esc(sub)}</small>${bar !== undefined ? `<div class="mini"><i style="width:${bar}%"></i></div>` : ""}</button>`).join("")}</div>
+  <div class="two"><div class="panel"><h3>Funil: onde estão as empresas</h3><div class="sub">Clique numa fase para ver quais são.</div>${PIPE.map(k => `<button class="fun ${ui.drill === "stage:" + k ? "on" : ""}" data-drill="stage:${k}"><span class="lb">${STAT[k]}</span><span class="bar2"><i style="width:${Math.round(counts[k] / max * 100)}%"></i></span><span class="nn">${counts[k]}</span></button>`).join("")}<button class="fun ${ui.drill === "stage:perdido" ? "on" : ""}" data-drill="stage:perdido"><span class="lb">Perdido</span><span class="bar2"><i style="width:${Math.round(counts.perdido / max * 100)}%;background:#e8a29b"></i></span><span class="nn">${counts.perdido}</span></button>
+    <div class="note" style="margin-top:8px" title="Taxa de resposta: em cada 100 empresas contactadas, quantas responderam (sim ou não).">De ${contacted} contactadas, <b>${replied}</b> responderam (<b>${rate}%</b>) e <b>${wins.length}</b> viraram clientes (<b>${winRate}%</b>).</div></div>
+  <div class="panel"><h3>Autonomia: tem trabalho à frente?</h3><div class="sub">Trabalho já vendido contra conversas em curso.</div>
+    <div><b>${a.weeks}</b> semanas de trabalho contratado <span class="note">(alerta abaixo de ${c.runwayWarn})</span></div><div class="meter ${lvl(wl)}"><i style="width:${wl}%"></i></div>
+    <div><b>${a.inContact}</b> oportunidades em contacto <span class="note">(alerta abaixo de ${c.minLeads})</span></div><div class="meter ${lvl(ll)}"><i style="width:${ll}%"></i></div>
+    <div class="runway ${a.level}" style="margin:0">${a.level === "green" ? "Tudo bem: há trabalho e conversas." : a.level === "amber" ? "Atenção: um dos dois está baixo." : "Pipeline curto: convém contactar mais empresas esta semana."}</div></div></div>
+  <div class="panel"><h3>Atividade: mensagens enviadas nos últimos 14 dias</h3><div class="sub">Passe o rato por cima de uma barra. Esta semana: <b>${act.week}</b> (${diff >= 0 ? "+" : ""}${diff} face à anterior).</div>${activitySvg()}</div>
+  <div class="panel" id="drill">${drillHtml()}</div></div>`;
+}
+function bindPainel(){
+  if (ui.tab !== "painel") return;
+  const go = $("#naGo"); if (go) go.onclick = () => ui.na && ui.na.run();
+  $$("[data-drill]").forEach(b => b.onclick = () => { ui.drill = b.dataset.drill; render(); const d = $("#drill"); if (d) d.scrollIntoView({ behavior: "smooth", block: "nearest" }); });
+  $$("#drill [data-open]").forEach(b => b.onclick = () => { const l = byId(b.dataset.open); if (l) showLead(l); });
+  $$("#drill [data-dx]").forEach(b => b.onclick = () => {
+    const l = byId(b.dataset.lid); if (!l) return;
+    if (b.dataset.dx === "card") return goCard(l.id);
+    if (b.dataset.dx === "snooze") { l.nextContact = addDays(today(), 2); hist(l, "note", "Follow-up adiado 2 dias."); save(); render(); toast("Follow-up adiado 2 dias."); }
+  });
+}
+
+/* ============ quadro do pipeline (arrastar e largar) ============ */
+const trackToggle = () => `<div class="tgl"><button data-tv="board" class="${ui.trackView === "list" ? "" : "on"}">Quadro</button><button data-tv="list" class="${ui.trackView === "list" ? "on" : ""}">Lista</button></div>`;
+const bcard = l => `<div class="bc" draggable="true" data-bid="${l.id}" title="Arraste para a fase seguinte"><b>${esc(l.name)}</b><span class="note">${esc(l.city || "")} · ${esc(nextStep(l))}</span>${l.deal && l.deal.value ? `<div class="note">valor ${esc(l.deal.value)}</div>` : ""}</div>`;
+function viewBoard(){
+  const all = dashLeads().filter(l => match(l) && !isOpt(l)), lost = all.filter(isEnded);
+  let h = trackToggle() + runwayHtml() + `<p class="note" style="margin:0 0 10px"><b>Arraste</b> um cartão para a fase seguinte. Clique num cartão para abrir a ficha. Algumas passagens (Reunião, Ganho) abrem a ficha para pedir os dados certos. Voltar atrás faz-se na ficha.</p>` + filterBar();
+  h += `<div class="board">` + PIPE.map(k => { const items = all.filter(l => l.status === k), sum = items.reduce((a, l) => a + (+((l.deal || {}).value) || 0), 0), shown = k === "novo" ? items.slice().sort((a, b) => score(b) - score(a)).slice(0, 10) : items;
+    return `<div class="col" data-col="${k}"><div class="ch"><b>${STAT[k]}</b><span class="cnt">${items.length}</span></div>${sum ? `<div class="note">valor ${sum.toLocaleString("pt-PT")}</div>` : ""}${shown.map(bcard).join("")}${k === "novo" && items.length > 10 ? `<div class="note">+${items.length - 10} em "Hoje"</div>` : ""}</div>`; }).join("") + `</div>`;
+  h += `<div class="col lost" data-col="perdido"><div class="ch"><b>Perdido (largue aqui para marcar como perdido)</b><span class="cnt">${lost.length}</span></div>${lost.map(l => `<div class="bc" data-bid="${l.id}"><b>${esc(l.name)}</b><span class="note">${esc(l.lostReason || "")}</span></div>`).join("") || '<span class="note">Nenhum.</span>'}</div>`;
+  return h;
+}
+function viewTrack(){ return ui.trackView === "list" ? viewTrackList() : viewBoard(); }
+function moveLead(l, to){
+  const from = l.status; if (from === to) return;
+  if (isEnded(l)) return toast("Esta empresa está em descanso. Abra a ficha e use 'Reativar'.");
+  if (to === "perdido") { const why = prompt(`Perdido: ${l.name}. Motivo (opcional):`, ""); if (why === null) return; l.lostCode = "outro"; l.lostReason = why.trim() || "Perdido"; stage(l, "perdido", "Perdido" + (why.trim() ? ": " + why.trim() : "") + `. Descanso de ${coolOf(l)} dias.`); return toast("Marcado como perdido."); }
+  if (PIPE.indexOf(to) < PIPE.indexOf(from)) return toast("Só se avança no pipeline. Para voltar atrás, abra a ficha e edite o estado.");
+  if (from === "novo" && to !== "contactado") return toast("Primeiro contacte a empresa.");
+  if (to === "contactado") { const gate = sendGate(l); if (!gate.ok) return alert(gate.reason); if (confirm(`Já contactou "${l.name}" fora do painel? Fica registado como contactado hoje.`)) recordSend(l, { kind: "manual" }, "registo manual"); return; }
+  if (to === "reuniao") { showLead(l); return toast("Escolha a data e a hora e clique em 'Marcar reunião'."); }
+  if (to === "ganho") { showLead(l); return toast("Preencha as semanas de trabalho e clique em 'Ganho'."); }
+  stage(l, to, to === "proposta" ? "Proposta enviada." : "Em negociação."); toast("Movido para " + STAT[to] + ".");
+}
+function bindBoard(){
+  if (ui.tab !== "acomp" || ui.trackView === "list") return;
+  $$(".bc").forEach(c => { c.onclick = () => { const l = byId(c.dataset.bid); if (l) showLead(l); }; if (c.draggable) { c.ondragstart = e => { e.dataTransfer.setData("text/plain", c.dataset.bid); e.dataTransfer.effectAllowed = "move"; c.classList.add("drag"); }; c.ondragend = () => c.classList.remove("drag"); } });
+  $$(".col[data-col]").forEach(col => { col.ondragover = e => { e.preventDefault(); col.classList.add("over"); }; col.ondragleave = () => col.classList.remove("over"); col.ondrop = e => { e.preventDefault(); col.classList.remove("over"); const l = byId(e.dataTransfer.getData("text/plain")); if (l) moveLead(l, col.dataset.col); }; });
+}
+
+/* ============ render ============ */
+function renderStats(){
+  const s = S.leads, replied = l => l.replyResult === "sim" || ["reuniao", "proposta", "negociacao", "ganho"].includes(l.status);
+  const cells = [["Novos por contactar", s.filter(l => l.status === "novo" && !isOpt(l)).length], ["Enviadas hoje", sentToday() + " / " + S.settings.daily], ["Responderam", s.filter(replied).length], ["Ganhos", s.filter(l => l.status === "ganho").length]];
+  $("#stats").innerHTML = cells.map(([a, b]) => `<div class="st"><b>${b}</b><span>${a}</span></div>`).join("");
+  $("#demoBar").classList.toggle("hidden", !s.some(l => l.demo));
+  $("#stats").style.display = ui.tab === "hoje" ? "" : "none";
+}
+function filterBar(extra=""){
+  return `<div class="bar">
+    <label class="f">Mercado<select id="fMarket"><option value="ALL">Todos</option><option value="PT" ${ui.market==="PT"?"selected":""}>Portugal</option><option value="BR" ${ui.market==="BR"?"selected":""}>Brasil</option></select></label>
+    <label class="f">Segmento<select id="fSeg"><option value="ALL">Todos</option>${Object.entries(SEG).map(([k, v]) => `<option value="${k}" ${ui.segment===k?"selected":""}>${v}</option>`).join("")}</select></label>${extra}</div>`;
+}
+function bindFilters(){
+  const m = $("#fMarket"), s = $("#fSeg"); if (m) m.onchange = () => { ui.market = m.value; render(); }; if (s) s.onchange = () => { ui.segment = s.value; render(); };
+}
+function leadCard(l, fu){
+  const sc = score(l), p = prio(sc), land = likelyLandline(l.phone, l.market), draft = l.draft ?? buildMessage(l, msgKind(l));
+  const gate = sendGate(l), canWa = !!l.phone && !land && gate.ok;
+  return `<div class="card ${fu ? "fu" : ""}" data-id="${l.id}">
+    <div class="top"><div><div class="name">${esc(l.name)} ${fu ? '<span class="tag fu">Follow-up</span>' : ""}${l.inbound ? '<span class="tag" style="background:#dcfce7;color:#15803d">Pedido do site</span>' : ""}${l.radar ? '<span class="tag">Radar</span>' : ""}${l.fonte ? `<span class="tag">${esc(SRC[l.fonte] || l.fonte)}</span>` : ""}</div>
+      <div class="meta">${esc(SEG[l.segment] || "")} · ${esc(l.city || "—")} · ${l.market === "BR" ? "Brasil" : "Portugal"}${l.demo ? " · exemplo fictício" : ""}</div></div>
+      <span class="badge ${p}">Prioridade ${p} · ${sc} pts</span></div>
+    <div class="why">${esc(whyNow(l))}</div>
+    <div class="proof">${l.source ? `Prova: <a href="${esc(l.source)}" target="_blank" rel="noopener">${esc(l.source.replace(/^https?:\/\//, "").slice(0, 60))}</a>` : "Sem link de prova"}${l.site ? ` · Site: <a href="${esc(l.site.startsWith("http") ? l.site : "https://" + l.site)}" target="_blank" rel="noopener">${esc(l.site)}</a>` : ""}${l.radar ? ` · <a href="https://www.google.com/search?q=${encodeURIComponent(l.name + " " + (l.city || ""))}" target="_blank" rel="noopener">verificar no Google</a>` : ""}${l.instagram ? ` · IG: ${esc(l.instagram)}` : ""}${l.phone ? ` · ${esc("+" + l.phone)}` : " · sem telefone"}${land && l.phone ? " · parece telefone fixo (sem WhatsApp provável)" : ""}</div>
+    ${l.inbound ? `<div class="legal" style="background:#f3edff;border-color:rgba(124,58,237,.25);color:#3b2a66"><b>O que escreveu:</b> ${esc(l.inboundMsg || "")}<br><span class="note">${esc(l.need || "")}${l.company ? " · " + esc(l.company) : ""}${l.email ? " · " + esc(l.email) : ""}</span></div>` : ""}
+    ${trackLine(l)}
+    <details ${fu || l.inbound ? "open" : ""}><summary>Mensagem sugerida (pode editar)</summary><textarea data-draft="${l.id}">${esc(draft)}</textarea></details>
+    <div class="actions">
+      <button class="b wa" data-a="send" ${canWa ? "" : "disabled"} title="${esc(canWa ? "" : (!gate.ok ? gate.reason : "Sem número de WhatsApp válido"))}">Enviar no WhatsApp</button>
+      ${l.email ? '<button class="b" data-a="mail">Responder por e-mail</button>' : ""}
+      ${l.fonte && l.source && !l.phone ? '<button class="b" data-a="platform">Abrir a publicação</button><button class="b" data-a="markcontact">Já respondi na plataforma</button>' : ""}
+      <button class="b" data-a="copy">Copiar mensagem</button>
+      ${l.status === "contactado" && !l.replyResult ? '<button class="b" data-a="yes">Respondeu: interessado</button><button class="b" data-a="no">Respondeu: sem interesse</button>' : ""}
+      <button class="b" data-a="hist">Histórico e etapas</button>
+      ${l.status === "contactado" ? '<button class="b" data-a="snooze">Adiar 2 dias</button>' : ""}
+      <button class="b" data-a="edit">Editar</button>
+      <button class="b bad" data-a="opt">Não contactar</button>
+    </div></div>`;
+}
+function viewHoje(){
+  const { inb, fu, nv } = todayLists(), left = Math.max(0, S.settings.daily - sentToday()), shown = ui.showAll ? nv : nv.slice(0, Math.max(left, 5));
+  let h = `<details class="how" style="margin:0 0 12px"><summary>Boas práticas de envio</summary><p class="note">Envie um a um, identifique-se, ofereça sempre a opção de sair e não ultrapasse o limite diário. Em Portugal, empresários em nome individual contam como pessoas e pedem consentimento. Não é aconselhamento jurídico.</p></details>`;
+  h += `<div class="quota"><b>Hoje: ${sentToday()} / ${S.settings.daily}</b><div class="prog"><i style="width:${Math.min(100, sentToday() / S.settings.daily * 100)}%"></i></div><span class="note">${left} mensagens disponíveis hoje</span></div>`;
+  { const a0 = autonomy(), n0 = todayItems().n; h += `<div class="strip"><span>Lembretes: <b>${n0}</b></span><span>·</span><span>Autonomia: <b>${a0.weeks}</b> semanas contratadas, <b>${a0.inContact}</b> em contacto</span><button class="b" style="min-height:30px;padding:0 12px" data-go="painel">Abrir o Painel</button></div>`; }
+  h += filterBar();
+  if (!S.leads.length) return h + `<div class="empty">Ainda não há leads.<br><br><button class="b pri" data-go="importar">Importar leads</button> <button class="b" id="addLead">Adicionar um lead</button> <button class="b" id="demo">Carregar exemplos</button></div>`;
+  if (!inb.length && !fu.length && !nv.length) return h + `<div class="empty">Nada por contactar com estes filtros. Bom trabalho!</div>`;
+  if (inb.length) h += `<h3>Pedidos do site (${inb.length})</h3><p class="note">Estas pessoas pediram contacto. Responda primeiro a estas: não contam para o limite diário.</p>` + inb.map(l => leadCard(l, false)).join("");
+  if (fu.length) h += `<h3>Follow-ups de hoje (${fu.length})</h3>` + fu.map(l => leadCard(l, true)).join("");
+  if (nv.length) h += `<h3>Novos por prioridade (${nv.length})</h3>` + shown.map(l => leadCard(l, false)).join("") + (nv.length > shown.length ? `<div class="empty"><button class="b" id="more">Mostrar todos (${nv.length})</button></div>` : "");
+  return h;
+}
+function viewLeads(){
+  const q = ui.q.toLowerCase();
+  const rows = S.leads.filter(l => match(l) && (ui.status === "ALL" || l.status === ui.status) && (!q || (l.name + " " + l.city + " " + l.phone).toLowerCase().includes(q))).sort((a, b) => score(b) - score(a));
+  const extra = `<label class="f">Estado<select id="fStatus"><option value="ALL">Todos</option>${Object.entries(STAT).map(([k, v]) => `<option value="${k}" ${ui.status===k?"selected":""}>${v}</option>`).join("")}</select></label><label class="f">Procurar<input id="fq" value="${esc(ui.q)}" placeholder="nome, cidade, telefone"></label><button class="b pri" id="addLead">+ Novo lead</button>`;
+  let h = filterBar(extra);
+  if (!rows.length) return h + `<div class="empty">Sem leads com estes filtros.</div>`;
+  h += `<table><thead><tr><th>Empresa</th><th>Segmento</th><th>Mercado</th><th>Pontos</th><th>Estado</th><th>Contactado em</th><th>Resposta</th><th>Próximo</th><th></th></tr></thead><tbody>`;
+  h += rows.map(l => `<tr data-id="${l.id}"><td><b>${esc(l.name)}</b><br><span class="note">${esc(l.city || "")}${isOpt(l) ? " · não contactar" : ""}</span></td><td>${esc(SEG[l.segment] || "")}</td><td>${l.market === "BR" ? "BR" : "PT"}</td><td><span class="badge ${prio(score(l))}">${score(l)}</span></td><td><select data-st>${Object.entries(STAT).filter(([k]) => !(k === "novo" && l.lastContact)).map(([k, v]) => `<option value="${k}" ${l.status===k?"selected":""}>${v}</option>`).join("")}</select></td><td>${esc(fmtD(l.lastContact))}</td><td>${esc(replyLabel(l))}</td><td>${esc(l.nextContact ? fmtD(l.nextContact) : "—")}</td><td><button class="b" data-a="open">Abrir</button> <button class="b" data-a="edit">Editar</button></td></tr>`).join("");
+  return h + `</tbody></table><p class="note">${rows.length} leads</p>`;
+}
+function viewTrackList(){
+  const q = ui.q.toLowerCase(), all = S.leads.filter(l => match(l)), contacted = all.filter(l => l.status !== "novo");
+  const chips = [["ALL", "Todos os contactados", contacted.length], ...Object.keys(STAT).filter(k => k !== "novo").map(k => [k, STAT[k], all.filter(l => l.status === k).length])];
+  const rows = (ui.trackStage === "ALL" ? contacted : all.filter(l => l.status === ui.trackStage)).filter(l => !q || (l.name + " " + (l.city || "") + " " + (l.phone || "")).toLowerCase().includes(q)).sort((a, b) => (b.lastContact || "").localeCompare(a.lastContact || ""));
+  let h = trackToggle() + runwayHtml() + `<div class="legal" style="background:#f3edff;border-color:rgba(124,58,237,.25);color:#3b2a66"><b>Acompanhamento:</b> o histórico de todas as empresas que já contactou, do primeiro contacto até ao fim. O painel <b>não deixa reenviar</b> a uma empresa já contactada: os follow-ups só são permitidos nas datas certas (máximo ${MAX_FOLLOWUPS}), e quem não responde ou diz que não fica em descanso de ${COOL.semresposta} a ${COOL.semInteresse} dias.</div>`;
+  h += filterBar(`<label class="f">Procurar<input id="fq" value="${esc(ui.q)}" placeholder="nome, cidade, telefone"></label><button class="b" id="exHist">Exportar histórico (CSV)</button>`);
+  h += `<div class="chips2">${chips.map(([k, v, n]) => `<button class="chip2 ${ui.trackStage === k ? "on" : ""}" data-chip="${k}">${v} (${n})</button>`).join("")}</div>`;
+  if (!rows.length) return h + `<div class="empty">Ainda não há empresas neste estado.</div>`;
+  h += `<table><thead><tr><th>Empresa</th><th>1.º contacto</th><th>Último</th><th>Msgs</th><th>Resposta</th><th>Estado</th><th>Próximo passo</th><th></th></tr></thead><tbody>${rows.map(l => `<tr data-id="${l.id}"><td><b>${esc(l.name)}</b><br><span class="note">${esc(l.city || "")} · ${l.market === "BR" ? "Brasil" : "Portugal"}</span></td><td>${esc(fmtD(l.firstContact || l.lastContact))}</td><td>${esc(fmtD(l.lastContact))}</td><td>${msgCount(l)}</td><td>${esc(replyLabel(l))}</td><td><span class="tag">${esc(STAT[l.status])}</span></td><td>${esc(nextStep(l))}</td><td><button class="b" data-a="open">Abrir</button></td></tr>`).join("")}</tbody></table><p class="note">${rows.length} empresas</p>`;
+  return h;
+}
+function showLead(l){
+  $("#dlg").classList.remove("wide");
+  const f = $("#dform"), ended = isEnded(l), idx = PIPE.indexOf(l.status), d = l.deal || {};
+  const steps = PIPE.map((k, i) => `<div class="stp ${!ended && i < idx ? "done" : !ended && i === idx ? "cur" : ""}">${STAT[k]}</div>`).join("");
+  const tl = (l.history || []).slice().reverse().map(h => `<div class="tl"><b>${esc(HTYPE[h.type] || h.type)}</b><span>${esc(fmtT(h.t))}</span>${h.text ? `<p>${esc(h.text)}</p>` : ""}</div>`).join("");
+  const acts = [];
+  if (l.status === "contactado") { if (!l.replyResult) acts.push(["yes", "Respondeu: interessado"], ["no", "Respondeu: sem interesse"]); acts.push(["meet", "Marcar reunião"]); }
+  if (l.status === "reuniao") acts.push(["prop", "Proposta enviada"], ["lose", "Perdido"]);
+  if (l.status === "proposta") acts.push(["neg", "Negociação"], ["win", "Ganho"], ["lose", "Perdido"]);
+  if (l.status === "negociacao") acts.push(["win", "Ganho"], ["lose", "Perdido"]);
+  if (ended) acts.push(["react", "Reativar…"]);
+  acts.push(["note", "Adicionar nota"], ["edit", "Editar dados"]);
+  const dealForm = `<details ${["reuniao", "proposta", "negociacao", "ganho"].includes(l.status) || l.status === "contactado" && l.replyResult === "sim" ? "open" : ""}><summary>Dados do negócio</summary>
+    <div class="grid2"><label class="f">Reunião (data e hora)<input type="datetime-local" id="dMeet" value="${esc(l.meetingAt || "")}"></label>
+      <label class="f">Valor da proposta<input type="number" id="dValue" min="0" step="1" value="${esc(d.value ?? "")}"></label>
+      <label class="f">Semanas de trabalho contratado<input type="number" id="dWeeks" min="0" step="0.5" value="${esc(d.weeks ?? "")}"></label>
+      <label class="f">Início previsto<input type="date" id="dStart" value="${esc(d.start || "")}"></label></div>
+    <div class="actions"><button type="button" class="b" data-x="saveDeal">Guardar dados</button></div></details>`;
+  f.innerHTML = `<h3 style="margin-top:0">${esc(l.name)}</h3><div class="note">${esc(SEG[l.segment] || "")} · ${esc(l.city || "—")} · ${l.market === "BR" ? "Brasil" : "Portugal"}${l.phone ? " · +" + esc(l.phone) : ""}</div>
+    <div class="stepper">${steps}</div>${ended ? `<span class="endbadge">Perdido${l.lostReason ? ": " + esc(l.lostReason) : ""}</span>` : ""}
+    ${trackLine(l) || '<div class="trackline">Ainda não contactada.</div>'}
+    <div class="note" style="margin-top:6px"><b>Próximo passo:</b> ${esc(nextStep(l))}</div>
+    ${dealForm}
+    ${docsBlock(l)}
+    <h4 style="margin:14px 0 4px">Histórico</h4><div class="tlw">${tl || '<span class="note">Sem eventos.</span>'}</div>
+    <div class="actions">${acts.map(([k, v]) => `<button type="button" class="b ${k === "win" ? "pri" : ""}" data-x="${k}">${v}</button>`).join("")}<button class="b" value="x" formnovalidate>Fechar</button></div>`;
+  if (!$("#dlg").open) $("#dlg").showModal();
+  const again = () => { const fresh = byId(l.id); if (fresh) showLead(fresh); };
+  const readDeal = () => {
+    const meet = $("#dMeet", f).value, v = $("#dValue", f).value, w = $("#dWeeks", f).value, st = $("#dStart", f).value;
+    l.meetingAt = meet || ""; l.deal = { value: v === "" ? "" : +v, weeks: w === "" ? "" : +w, start: st || "" };
+  };
+  $$("[data-x]", f).forEach(b => b.onclick = () => {
+    const k = b.dataset.x;
+    if (k === "saveClient") { const c = id => ($("#" + id, f).value || "").trim(); l.client = { contactName: c("ccContact"), taxId: c("ccTax"), address: c("ccAddr"), lang: c("ccLang") }; if (c("ccEmail")) l.email = c("ccEmail"); hist(l, "note", "Dados para documentos atualizados."); save(); return again(); }
+    if (k === "docProp") return docEditor(l, "proposta");
+    if (k === "docRep") return docEditor(l, "relatorio");
+    if (k === "docEnt") return docEditor(l, "entrega");
+    if (k === "saveDeal") { readDeal(); hist(l, "note", "Dados do negócio atualizados."); save(); render(); return again(); }
+    if (k === "yes") { l.replyResult = "sim"; l.nextContact = ""; hist(l, "yes", "Tem interesse em avançar."); save(); render(); return again(); }
+    if (k === "no") { if (!confirm(`Registar que "${l.name}" respondeu SEM interesse?\n\nA empresa fica em descanso ${COOL.semInteresse} dias e não volta a ser contactada neste período.`)) return; l.replyResult = "nao"; l.lostCode = "semInteresse"; l.lostReason = "Sem interesse"; stage(l, "perdido", `Respondeu que não tem interesse. Descanso de ${COOL.semInteresse} dias.`, "no"); return again(); }
+    if (k === "meet") { readDeal(); if (!l.meetingAt) { toast("Escolha primeiro a data e a hora da reunião."); const m = $("#dMeet", f); m.closest("details").open = true; m.focus(); return; } stage(l, "reuniao", "Reunião marcada para " + fmtT(l.meetingAt) + "."); return again(); }
+    if (k === "prop") { readDeal(); stage(l, "proposta", "Proposta enviada" + (l.deal.value !== "" ? " (valor " + l.deal.value + ")" : "") + "."); return again(); }
+    if (k === "neg") { stage(l, "negociacao", "Em negociação."); return again(); }
+    if (k === "win") { readDeal(); if (!(+l.deal.weeks > 0) && !confirm("Sem 'semanas de trabalho contratado', o indicador de autonomia não conta este projeto.\n\nMarcar como Ganho mesmo assim?")) return; stage(l, "ganho", "Negócio ganho" + (l.deal.value !== "" ? " (valor " + l.deal.value + ")" : "") + (+l.deal.weeks > 0 ? ", " + l.deal.weeks + " semanas de trabalho" : "") + "."); return again(); }
+    if (k === "lose") { const why = prompt("Motivo (opcional):", ""); if (why === null) return; l.lostCode = "outro"; l.lostReason = why.trim() || "Perdido"; stage(l, "perdido", "Perdido" + (why.trim() ? ": " + why.trim() : "") + `. Descanso de ${coolOf(l)} dias.`); return again(); }
+    if (k === "react") { if (reactivate(l)) return again(); return; }
+    if (k === "note") { const n = prompt("Nota:", ""); if (n && n.trim()) { hist(l, "note", n.trim()); save(); } return again(); }
+    if (k === "edit") { $("#dlg").close(); return editLead(l); }
+  });
+  $$("[data-docopen]", f).forEach(b => b.onclick = () => { const d = (l.docs || []).find(x => x.id === b.dataset.docopen); if (d) docPreview(l, d); });
+}
+function bindTrack(){
+  $$("[data-tv]").forEach(b => b.onclick = () => { ui.trackView = b.dataset.tv; render(); });
+  $$("[data-chip]").forEach(b => b.onclick = () => { ui.trackStage = b.dataset.chip; render(); });
+  $$("tr[data-id] [data-a='open']").forEach(b => b.onclick = () => showLead(byId(b.closest("tr").dataset.id)));
+  const eh = $("#exHist"); if (eh) eh.onclick = exportCsv;
+}
+function viewImport(){
+  return `<div class="card"><h3 style="margin-top:0">Importar leads (CSV)</h3>
+    <p class="note">Cabeçalhos aceites: <b>nome</b>, telefone, site, instagram, cidade, segmento (ou categoria), mercado (PT ou BR), fonte (link de prova), sinais (separados por |), notas. Pode colar o conteúdo ou escolher um ficheiro. Os sinais "não tem site" e "só Instagram" são detetados sozinhos. Números repetidos e da lista "Não contactar" são ignorados.</p>
+    <div class="actions"><input type="file" id="csvFile" accept=".csv,text/csv" style="max-width:320px"><button class="b" id="csvModel">Descarregar modelo CSV</button></div>
+    <label class="f" style="margin-top:12px">Ou cole aqui<textarea id="csvText" placeholder="nome;telefone;site;instagram;cidade;segmento;mercado;fonte"></textarea></label>
+    <label class="f" style="max-width:240px;margin-top:10px">Mercado por defeito<select id="csvMarket"><option value="PT">Portugal</option><option value="BR">Brasil</option></select></label>
+    <div class="actions"><button class="b pri" id="csvGo">Importar</button></div></div>`;
+}
+function viewOpt(){
+  if (!S.optout.length) return `<div class="empty">Ninguém na lista. Quem pedir para não ser contactado deve ser adicionado aqui, e nunca mais aparece em "Hoje".</div>`;
+  return `<table><thead><tr><th>Nome</th><th>Telefone</th><th>Data</th><th></th></tr></thead><tbody>${S.optout.map((o, i) => `<tr><td>${esc(o.name)}</td><td>${esc(o.phone ? "+" + o.phone : "—")}</td><td>${esc(o.date)}</td><td><button class="b" data-rm="${i}">Remover da lista</button></td></tr>`).join("")}</tbody></table><p class="note">Remover só se a própria pessoa voltar a pedir contacto.</p>`;
+}
+function viewConfig(){
+  return `<div class="card"><h3 style="margin-top:0">Definições</h3>
+    <div class="grid2"><label class="f">Limite diário de mensagens<input type="number" id="cDaily" min="1" max="60" value="${S.settings.daily}"></label><label class="f">Nome de quem assina as mensagens<input id="cSender" value="${esc(S.settings.sender)}"></label></div>
+    <p class="note">Recomendado: 20 a 30 por dia, enviadas uma a uma, para proteger o seu número de WhatsApp.</p>
+    <div class="actions"><button class="b pri" id="cSave">Guardar definições</button></div></div>
+  ${companyCard()}
+  <div class="card"><h3 style="margin-top:0">Lembretes e autonomia</h3>
+    <div class="grid2"><label class="f">Lembrar quando há X dias sem contacto<input type="number" id="rmNo" min="1" max="30" value="${remCfg().noContact}"></label>
+      <label class="f">Proposta sem resposta há X dias<input type="number" id="rmProp" min="1" max="60" value="${remCfg().proposal}"></label>
+      <label class="f">Avisar da reunião X dias antes<input type="number" id="rmMeet" min="0" max="7" value="${remCfg().meetingAhead}"></label>
+      <label class="f">Alerta de autonomia: menos de X semanas contratadas<input type="number" id="rmWeeks" min="1" max="52" value="${remCfg().runwayWarn}"></label>
+      <label class="f">...e menos de X leads em contacto<input type="number" id="rmLeads" min="1" max="100" value="${remCfg().minLeads}"></label></div>
+    <p class="note">As quatro regras: leads sem contacto, proposta sem resposta, reunião próxima e follow-up necessário. O indicador compara as semanas de trabalho contratado (projetos Ganhos) com os leads em contacto.</p>
+    <div class="actions"><button class="b pri" id="rmSave">Guardar</button></div></div>
+  <div class="card"><h3 style="margin-top:0">Ligação ao site (Supabase)</h3>
+    <p class="note" id="sbStatus"></p>
+    <div class="grid2"><label class="f">URL do projeto<input id="sbUrl" value="${esc(S.settings.sbUrl || SB_DEFAULT_URL)}"></label>
+      <label class="f">Chave pública (anon / publishable)<input id="sbKey" value="${esc(S.settings.sbKey || SB_DEFAULT_KEY)}" placeholder="eyJ... ou sb_publishable_..."></label>
+      <label class="f">E-mail do utilizador no Supabase<input id="sbEmail" type="email" value="${esc(S.settings.sbEmail || "")}" autocomplete="username"></label>
+      <label class="f">Palavra-passe (não é guardada)<input id="sbPass" type="password" autocomplete="current-password"></label></div>
+    <p class="note">Use apenas a chave pública. <b>Nunca</b> cole aqui a chave service_role.</p>
+    <div class="actions"><button class="b pri" id="sbLogin">Entrar</button><button class="b" id="sbSync">Sincronizar agora</button><button class="b" id="sbLogout">Sair</button></div></div>
+  <div class="card"><h3 style="margin-top:0">Cópia de segurança</h3>
+    <p class="note">Os dados ficam guardados na base de dados (Supabase), não neste navegador. Pode exportar uma cópia a qualquer momento.</p>
+    <div class="actions"><button class="b" id="exJson">Exportar tudo (JSON)</button><label class="b" style="display:inline-flex;align-items:center;cursor:pointer">Restaurar cópia<input type="file" id="imJson" accept=".json" class="hidden"></label><button class="b" id="exCsv">Exportar leads (CSV)</button></div></div>
+  <div class="card"><h3 style="margin-top:0">Exemplos e limpeza</h3>
+    <div class="actions"><button class="b" id="demo">Carregar leads de exemplo</button><button class="b" id="rmDemo">Remover exemplos</button><button class="b bad" id="wipe">Apagar tudo</button></div></div>`;
+}
+function todayItems(){
+  const r = computeReminders(), inb = S.leads.filter(l => !l.demo && l.inbound && l.status === "novo" && !isOpt(l));
+  return { r, inb, n: reminderCount(r) + inb.length };
+}
+function briefHtml(){
+  const { r, inb, n } = todayItems(), novos = S.leads.filter(l => !l.demo && l.status === "novo" && !isOpt(l) && !l.inbound).length, a = autonomy();
+  const grp = (title, arr, fmt) => arr.length ? `<div style="margin-top:8px"><b>${title} (${arr.length})</b>${arr.map(x => `<div class="note" style="margin:2px 0">${fmt(x)}</div>`).join("")}</div>` : "";
+  const nm = x => `<button type="button" class="b" style="min-height:28px;padding:0 10px" data-boid="${x.l.id}">${esc(x.l.name)}</button> ${esc(x.text)}`;
+  const who = esc(S.settings.sender || "");
+  return `<h3 style="margin-top:0">Bom dia${who ? ", " + who : ""}</h3><div class="note">${esc(fmtD(today()))} · ${esc(reminderSummary(r))}</div>${runwayHtml()}
+    ${n ? "" : '<p>Nada em atraso. Bom trabalho!</p>'}
+    ${grp("Pedidos do site", inb.map(l => ({ l, text: (l.need || "pediu contacto") + (l.inboundMsg ? ": " + l.inboundMsg.slice(0, 70) : "") })), nm)}${grp("Reuniões", r.meeting, nm)}${grp("Propostas sem resposta", r.proposal, nm)}${grp("Leads sem contacto", r.noContact, nm)}${grp("Follow-ups necessários", r.follow, nm)}
+    <p class="note" style="margin-top:12px">Novos por contactar: <b>${novos}</b> · Enviadas hoje: <b>${sentToday()} / ${S.settings.daily}</b> · Em contacto: <b>${a.inContact}</b> · Semanas contratadas: <b>${a.weeks}</b></p>
+    <div class="actions"><button type="button" class="b pri" id="briefGo">Ver a lista de hoje</button><button class="b" value="x" formnovalidate>Fechar</button></div>`;
+}
+function showBrief(){
+  const dlg = $("#dlg"), f = $("#dform"); dlg.classList.remove("wide"); f.innerHTML = briefHtml(); if (!dlg.open) dlg.showModal();
+  $("#briefGo").onclick = () => { dlg.close(); ui.tab = "hoje"; render(); };
+  $$("[data-boid]", f).forEach(b => b.onclick = () => { const l = byId(b.dataset.boid); if (l) showLead(l); });
+}
+function maybeBrief(){
+  if (S.settings.lastBrief === today() || $("#dlg").open || !S.leads.some(l => !l.demo)) return;
+  S.settings.lastBrief = today(); save();
+  const { n } = todayItems(); if (n || autonomy().level !== "green") showBrief();
+}
+function render(){
+  const ti = todayItems(); $('[data-t="hoje"]').textContent = ti.n ? `Hoje (${ti.n})` : "Hoje"; document.title = ti.n ? `(${ti.n}) Alpha Leads` : "Alpha Leads";
+  $$("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.t === ui.tab));
+  renderStats();
+  const v = { painel:viewPainel, hoje:viewHoje, docs:viewDocs, radar:viewRadar, fontes:viewSources, acomp:viewTrack, leads:viewLeads, importar:viewImport, optout:viewOpt, config:viewConfig }[ui.tab]();
+  $("#view").innerHTML = v; bindView();
+}
+
+/* ============ ações ============ */
+const byId = id => S.leads.find(l => l.id === id);
+function logAct(l, action){ S.log.push({ date: today(), id: l.id, action }); }
+function bindView(){
+  bindFilters();
+  const g = (id, fn) => { const e = $("#" + id); if (e) e.onclick = fn; };
+  $$("[data-go]").forEach(b => b.onclick = () => { ui.tab = b.dataset.go; render(); });
+  g("addLead", () => editLead()); g("more", () => { ui.showAll = true; render(); }); g("demo", loadDemo);
+  const fs = $("#fStatus"); if (fs) fs.onchange = () => { ui.status = fs.value; render(); };
+  const fq = $("#fq"); if (fq) fq.oninput = () => { ui.q = fq.value; const pos = fq.selectionStart; render(); const n = $("#fq"); n.focus(); n.setSelectionRange(pos, pos); };
+  $$("textarea[data-draft]").forEach(t => t.oninput = () => { const l = byId(t.dataset.draft); if (l) { l.draft = t.value; save(); } });
+  $$(".card[data-id] [data-a]").forEach(b => b.onclick = () => cardAction(byId(b.closest(".card").dataset.id), b.dataset.a));
+  $$("tr[data-id] [data-a='edit']").forEach(b => b.onclick = () => editLead(byId(b.closest("tr").dataset.id)));
+  $$("tr[data-id] [data-st]").forEach(s => s.onchange = () => {
+    const l = byId(s.closest("tr").dataset.id), ns = s.value;
+    if (ns === "novo" && l.lastContact) { toast("Já contactada: não pode voltar a 'Novo'. Use 'Reativar' no Acompanhamento."); render(); return; }
+    if (ns === l.status) return;
+    if (ns === "contactado" && !l.lastContact) { const gate = sendGate(l); if (!gate.ok) { alert(gate.reason); render(); return; } recordSend(l, { kind: "manual" }, "registo manual"); return; }
+    if (ns === "perdido") { l.lostCode = l.lostCode || "outro"; l.lostReason = l.lostReason || "Perdido"; }
+    stage(l, ns);
+  });
+  $$("[data-rm]").forEach(b => b.onclick = () => { if (confirm("Remover esta pessoa da lista 'Não contactar'? Só deve fazer isto se ela própria voltar a pedir contacto.")) { S.optout.splice(+b.dataset.rm, 1); save(); render(); } });
+  g("csvModel", () => download("modelo-leads.csv", "nome;telefone;site;instagram;cidade;segmento;mercado;fonte;sinais;notas\nClínica Exemplo;912345678;;@clinicaexemplo;Lisboa;clinica;PT;https://www.google.com/maps;reviews;exemplo\n", "text/csv"));
+  const cf = $("#csvFile"); if (cf) cf.onchange = () => { const f = cf.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { $("#csvText").value = r.result; }; r.readAsText(f); };
+  g("csvGo", doImport);
+  g("coSave", () => { const c = id => ($("#" + id).value || "").trim(); S.settings.company = { legalName: c("coName"), taxId: c("coTax"), address: c("coAddr"), email: c("coMail"), phone: c("coPhone"), website: c("coSite"), signer: c("coSigner"), role: c("coRole"), payment: c("coPay"), validity: Math.max(1, +c("coVal") || 15), warranty: c("coWar"), curPT: c("coCurPT") || "€", curBR: c("coCurBR") || "R$", vatPT: Math.max(0, +c("coVatPT") || 0), vatBR: Math.max(0, +c("coVatBR") || 0) }; save(); toast("Dados da empresa guardados."); render(); });
+  g("rmSave", () => { const v = (id, d, a, b) => Math.max(a, Math.min(b, +$("#" + id).value || d)); S.settings.rem = { noContact: v("rmNo", 3, 1, 30), proposal: v("rmProp", 7, 1, 60), meetingAhead: v("rmMeet", 1, 0, 7), runwayWarn: v("rmWeeks", 6, 1, 52), minLeads: v("rmLeads", 5, 1, 100) }; save(); toast("Lembretes guardados."); render(); });
+  $$("[data-oid]").forEach(b => b.onclick = () => showLead(byId(b.dataset.oid)));
+  g("cSave", () => { S.settings.daily = Math.max(1, Math.min(60, +$("#cDaily").value || 25)); S.settings.sender = $("#cSender").value.trim() || "Sandra"; S.leads.forEach(l => delete l.draft); save(); toast("Definições guardadas."); render(); });
+  g("exJson", () => download("alpha-leads-" + today() + ".json", JSON.stringify(S, null, 1), "application/json"));
+  g("exCsv", exportCsv);
+  const ij = $("#imJson"); if (ij) ij.onchange = () => { const f = ij.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { const d = JSON.parse(r.result); if (!d.leads) throw 0; if (confirm("Substituir os dados atuais pela cópia de segurança?")) { S = Object.assign({settings:{daily:25,sender:"Sandra"},optout:[],log:[],registry:[]}, d); migrate(); save(); render(); toast("Cópia restaurada."); } } catch(e){ toast("Ficheiro inválido."); } }; r.readAsText(f); };
+  g("rmDemo", () => { S.leads = S.leads.filter(l => !l.demo); save(); render(); toast("Exemplos removidos."); });
+  g("wipe", () => { if (confirm("Apagar TUDO: leads, histórico, lista 'Não contactar' e o registo de empresas já contactadas?\n\nDepois disto o painel deixa de saber quem já foi contactado e poderia incomodar essas empresas outra vez. Faça antes uma cópia de segurança.")) { S = { leads:[], optout:[], log:[], registry:[], settings:S.settings, radar:S.radar }; migrate(); save(); render(); } });
+  bindSync();
+  bindRadar();
+  bindTrack();
+  bindSources();
+  bindDocs();
+  bindPainel();
+  bindBoard();
+}
+function cardAction(l, a){
+  if (!l) return;
+  const ta = $(`textarea[data-draft="${l.id}"]`), text = ta ? ta.value : (l.draft ?? buildMessage(l, msgKind(l)));
+  if (a === "copy") { navigator.clipboard.writeText(text).then(() => toast("Mensagem copiada."), () => toast("Não foi possível copiar.")); return; }
+  if (a === "edit") return editLead(l);
+  if (a === "hist") return showLead(l);
+  if (a === "opt") { if (confirm(`Marcar "${l.name}" como NÃO CONTACTAR?`)) { setOpt(l); save(); render(); toast("Adicionado à lista Não contactar."); } return; }
+  if (a === "yes") { l.replyResult = "sim"; l.nextContact = ""; hist(l, "yes", "Tem interesse em avançar."); save(); render(); toast("Registado: respondeu com interesse. Próximo passo: marcar reunião."); return; }
+  if (a === "no") {
+    if (!confirm(`Registar que "${l.name}" respondeu SEM interesse?\n\nA empresa fica em descanso ${COOL.semInteresse} dias e não volta a ser contactada neste período.`)) return;
+    l.replyResult = "nao"; l.lostCode = "semInteresse"; l.lostReason = "Sem interesse"; stage(l, "perdido", `Respondeu que não tem interesse. Descanso de ${COOL.semInteresse} dias.`, "no"); toast("Registado: sem interesse. Não será contactada."); return;
+  }
+  if (a === "snooze") { l.nextContact = addDays(today(), 2); hist(l, "note", "Follow-up adiado 2 dias."); save(); render(); toast("Follow-up adiado 2 dias."); return; }
+  if (a === "platform") { window.open(l.source, "_blank", "noopener"); return; }
+  if (a === "markcontact") { const gate = sendGate(l); if (!gate.ok) { alert(gate.reason); return; } recordSend(l, gate, "plataforma (" + (SRC[l.fonte] || "outra") + ")"); toast("Registado como contactado."); return; }
+  if (a === "mail" || a === "send") {
+    const gate = sendGate(l); if (!gate.ok) { alert(gate.reason); return; }
+    const counts = (gate.kind === "first" && !l.inbound) || gate.kind === "follow";
+    if (counts && sentToday() >= S.settings.daily && !confirm(`Já enviou ${sentToday()} mensagens hoje (limite ${S.settings.daily}). Enviar mesmo assim? Muitas mensagens seguidas podem bloquear o seu WhatsApp.`)) return;
+    if (a === "mail") { window.open(`mailto:${l.email}?subject=${encodeURIComponent("Alpha Tech Solutions")}&body=${encodeURIComponent(text)}`, "_self"); recordSend(l, gate, "e-mail"); toast("Registado como contactado."); return; }
+    if (l.demo) toast("Exemplo fictício: o WhatsApp não é aberto.");
+    else window.open(`https://wa.me/${l.phone}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    recordSend(l, gate, "WhatsApp");
+    if (!l.demo) toast(l.nextContact ? `Registado. Próximo follow-up permitido a ${fmtD(l.nextContact)}.` : "Registado como contactado.");
+  }
+}
+function setOpt(l){ l.optout = true; l.nextContact = ""; hist(l, "optout", "Adicionada à lista Não contactar."); registerContact(l, true); if (!S.optout.some(o => o.phone && o.phone === l.phone)) S.optout.push({ name: l.name, phone: l.phone, date: today() }); }
+
+/* ============ editar / criar ============ */
+function editLead(l){
+  $("#dlg").classList.remove("wide");
+  const n = !l; l = l || { id: uid(), name:"", segment:"outro", market:"PT", signals:[], status:"novo", followups:0, created: today() };
+  const f = $("#dform");
+  f.innerHTML = `<h3 style="margin-top:0">${n ? "Novo lead" : "Editar lead"}</h3>
+    <label class="f">Nome da empresa *<input id="eName" value="${esc(l.name)}" required></label>
+    <div class="grid2"><label class="f">Telefone / WhatsApp<input id="ePhone" value="${esc(l.phone ? "+" + l.phone : "")}" placeholder="912345678 ou +5511999999999"></label>
+      <label class="f">Cidade<input id="eCity" value="${esc(l.city || "")}"></label>
+      <label class="f">Mercado<select id="eMarket"><option value="PT" ${l.market!=="BR"?"selected":""}>Portugal</option><option value="BR" ${l.market==="BR"?"selected":""}>Brasil</option></select></label>
+      <label class="f">Segmento<select id="eSeg">${Object.entries(SEG).map(([k, v]) => `<option value="${k}" ${l.segment===k?"selected":""}>${v}</option>`).join("")}</select></label>
+      <label class="f">Site<input id="eSite" value="${esc(l.site || "")}"></label>
+      <label class="f">Instagram<input id="eIg" value="${esc(l.instagram || "")}"></label></div>
+    <label class="f">Link de prova (de onde veio o sinal)<input id="eSrc" value="${esc(l.source || "")}"></label>
+    <div class="f">Sinais</div><div class="checks">${Object.entries(SIG).map(([k, v]) => `<label><input type="checkbox" data-sig="${k}" ${(l.signals || []).includes(k) ? "checked" : ""}> ${v[0]} (${v[1] > 0 ? "+" : ""}${v[1]})</label>`).join("")}</div>
+    <div class="grid2"><label class="f">Estado<select id="eStatus">${Object.entries(STAT).map(([k, v]) => `<option value="${k}" ${l.status===k?"selected":""}>${v}</option>`).join("")}</select></label>
+      <label class="f">Próximo contacto<input type="date" id="eNext" value="${esc(l.nextContact || "")}"></label></div>
+    <label class="f">Notas<textarea id="eNotes" style="min-height:70px">${esc(l.notes || "")}</textarea></label>
+    <div class="actions"><button class="b pri" value="ok" id="eSave">Guardar</button><button class="b" value="x" formnovalidate>Cancelar</button>${n ? "" : '<button class="b bad" value="x" id="eDel" formnovalidate>Apagar lead</button>'}</div>`;
+  $("#dlg").showModal();
+  $("#eSave").onclick = ev => {
+    ev.preventDefault();
+    const name = $("#eName").value.trim(); if (!name) { $("#eName").focus(); return; }
+    if (!n) { const ns0 = $("#eStatus").value; if (ns0 === "novo" && l.lastContact) { alert("Esta empresa já foi contactada: não pode voltar ao estado Novo (evita reenvio). Use 'Reativar' no Acompanhamento, se for mesmo necessário."); return; } }
+    l.name = name; l.market = $("#eMarket").value; l.phone = normPhone($("#ePhone").value, l.market); l.city = $("#eCity").value.trim();
+    l.segment = $("#eSeg").value; l.site = $("#eSite").value.trim(); l.instagram = $("#eIg").value.trim(); l.source = $("#eSrc").value.trim();
+    l.signals = $$("[data-sig]").filter(c => c.checked).map(c => c.dataset.sig); { const ns = $("#eStatus").value; if (!n && ns !== l.status) { hist(l, "stage", (STAT[l.status] || "") + " → " + STAT[ns] + " (edição manual)"); if (ns === "perdido") { l.lostCode = l.lostCode || "outro"; if (!l.blockedUntil) l.blockedUntil = addDays(today(), coolOf(l)); } } l.status = ns; } l.nextContact = $("#eNext").value; l.notes = $("#eNotes").value.trim(); delete l.draft;
+    if (n) {
+      const dup = findDuplicate(l), reg = registryFind(l);
+      if (dup || reg) { alert(dup ? `Esta empresa já existe na lista ("${dup.name}", estado ${STAT[dup.status]}${dup.lastContact ? ", contactada em " + fmtD(dup.lastContact) : ""}). Não foi criada outra vez.` : `Esta empresa já foi contactada em ${fmtD(reg.last)}. Para não a incomodar, não foi criada outra vez.`); return; }
+      S.leads.push(l);
+    }
+    save(); $("#dlg").close(); render(); toast("Lead guardado.");
+  };
+  const del = $("#eDel"); if (del) del.onclick = ev => { ev.preventDefault(); if (confirm("Apagar este lead? O registo de que a empresa já foi contactada fica guardado, para não a incomodar de novo.")) { S.leads = S.leads.filter(x => x.id !== l.id); save(); $("#dlg").close(); render(); } };
+}
+
+/* ============ CSV ============ */
+function parseCsv(text){
+  const first = text.split(/\r?\n/)[0] || ""; const d = (first.match(/;/g) || []).length >= (first.match(/,/g) || []).length ? ";" : ",";
+  const rows = []; let row = [], cur = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"') { if (text[i + 1] === '"') { cur += '"'; i++; } else q = false; } else cur += c; }
+    else if (c === '"') q = true; else if (c === d) { row.push(cur); cur = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(cur); cur = ""; if (row.some(x => x.trim())) rows.push(row); row = []; }
+    else cur += c;
+  }
+  row.push(cur); if (row.some(x => x.trim())) rows.push(row); return rows;
+}
+const ALIAS = { name:["nome","name","empresa","negocio","negócio"], phone:["telefone","phone","telemovel","telemóvel","whatsapp","celular","tel"], site:["site","website","url","web"], instagram:["instagram","ig"], city:["cidade","city","localidade"], segment:["segmento","segment","categoria","category"], market:["mercado","market","pais","país"], source:["fonte","source","prova","link"], signals:["sinais","signals"], notes:["notas","notes","obs"] };
+function guessSeg(t){
+  t = (t || "").toLowerCase();
+  if (SEG[t]) return t;
+  t = t.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  if (/clin|saude|dent|medic|nutri|psic|fisio|odonto/.test(t)) return "clinica";
+  if (/advog|advoc|jurid|law/.test(t)) return "advocacia";
+  if (/climat|ar.?condicionado|hvac/.test(t)) return "clima";
+  if (/estet|beleza|salao|cabel|unhas|barbe/.test(t)) return "estetica";
+  if (/loja|store|shop|ecommerce|e-commerce/.test(t)) return "loja";
+  if (/agencia|b2b|software/.test(t)) return "b2b";
+  return "outro";
+}
+function doImport(){
+  const text = $("#csvText").value.trim(); if (!text) return toast("Cole ou escolha um CSV primeiro.");
+  const rows = parseCsv(text); if (rows.length < 2) return toast("O CSV precisa de cabeçalho e pelo menos uma linha.");
+  const head = rows[0].map(h => h.trim().toLowerCase()), idx = {};
+  for (const [k, al] of Object.entries(ALIAS)) idx[k] = head.findIndex(h => al.includes(h));
+  if (idx.name < 0) return toast("Falta a coluna 'nome'.");
+  const defMarket = $("#csvMarket").value; let add = 0, dup = 0, blocked = 0;
+  for (const r of rows.slice(1)) {
+    const g = k => idx[k] >= 0 ? (r[idx[k]] || "").trim() : "";
+    const name = g("name"); if (!name) continue;
+    const mk = /^br/i.test(g("market")) ? "BR" : /^pt/i.test(g("market")) ? "PT" : defMarket;
+    const phone = normPhone(g("phone"), mk), key = phone || (name + "|" + g("city")).toLowerCase();
+    if (S.optout.some(o => o.phone && phone && o.phone === phone)) { blocked++; continue; }
+    if (knownLead({ name, phone, site: g("site"), instagram: g("instagram"), city: g("city") })) { dup++; continue; }
+    const signals = new Set(g("signals").split(/[|,]/).map(x => x.trim().toLowerCase()).filter(x => SIG[x]));
+    const site = g("site"), ig = g("instagram");
+    if (!site) signals.add("nosite");
+    if (!site && ig) signals.add("igonly");
+    S.leads.push({ id: uid(), name, phone, site, instagram: ig, city: g("city"), market: mk, segment: guessSeg(g("segment")), source: g("source"), notes: g("notes"), signals: [...signals], status: "novo", followups: 0, created: today() });
+    add++;
+  }
+  save(); ui.tab = "hoje"; render(); toast(`Importados ${add}. Repetidos: ${dup}. Na lista "Não contactar": ${blocked}.`);
+}
+function exportCsv(){
+  const rows = S.leads.map(l => ({ empresa: l.name, fonte: SRC[fonteOf(l)] || "", telefone: l.phone ? "+" + l.phone : "", cidade: l.city || "", mercado: l.market, segmento: SEG[l.segment] || "", estado: STAT[l.status] || l.status, primeiro_contacto: l.firstContact || "", ultimo_contacto: l.lastContact || "", mensagens: msgCount(l), resposta: replyLabel(l), motivo: l.lostReason || "", descanso_ate: l.blockedUntil || "", proximo_followup: l.nextContact || "", reuniao: l.meetingAt || "", proposta_enviada: l.proposalAt || "", valor: l.deal && l.deal.value !== undefined ? l.deal.value : "", semanas: l.deal && l.deal.weeks !== undefined ? l.deal.weeks : "", fonte: l.source || "", site: l.site || "", notas: l.notes || "", historico: (l.history || []).map(h => `${fmtT(h.t)} ${HTYPE[h.type] || h.type}${h.text ? ": " + h.text : ""}`).join(" | ") }));
+  const cols = Object.keys(rows[0] || { empresa: "" }), q = v => '"' + String(v ?? "").replace(/"/g, '""') + '"';
+  download("leads-historico-" + today() + ".csv", cols.join(";") + "\n" + rows.map(r => cols.map(c => q(r[c])).join(";")).join("\n"), "text/csv");
+}
+function download(name, content, type){ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["﻿" + content], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); }
+
+/* ============ exemplos fictícios ============ */
+function loadDemo(){
+  const d = [
+    ["Clínica Sorriso (exemplo)","910000001","","@clinicasorriso","Lisboa","clinica","PT",["nosite","reviews"]],
+    ["Estética Bela Vida (exemplo)","910000002","","@belavida.estetica","Porto","estetica","PT",["nosite","igonly","newbiz"]],
+    ["Cabral Advogados (exemplo)","910000003","cabraladvogados.example","","Coimbra","advocacia","PT",["slowsite"]],
+    ["FrioMax Climatização (exemplo)","11900000001","","@friomax","São Paulo","clima","BR",["nosite","igonly","reviews"]],
+    ["Dra. Helena Nutrição (exemplo)","11900000002","","@dra.helena","Curitiba","clinica","BR",["nosite","igonly"]],
+    ["Studio Aurora (exemplo)","11900000003","studioaurora.example","","Belo Horizonte","estetica","BR",["prosite"]]
+  ];
+  d.forEach(([name, phone, site, ig, city, segment, market, signals]) => S.leads.push({ id: uid(), demo: true, name, phone: normPhone(phone, market), site, instagram: ig, city, segment, market, signals, source: "https://exemplo.fictício/prova", status: "novo", followups: 0, created: today(), notes: "Exemplo fictício" }));
+  save(); ui.tab = "hoje"; render(); toast("Leads de exemplo carregados. Nenhuma mensagem real é enviada para eles.");
+}
+
+/* ============ documentos: propostas, relatórios mensais, documentos de entrega ============ */
+const LOGO_DATA = "data:image/webp;base64,UklGRnQRAABXRUJQVlA4IGgRAABQRACdASqAAIAAPjEUiEKiISEWSKeUIAMEsgBaja0hn+q8zGuf4v+0/rD2a9WfYPlXOZ+qn9N/9n3Cf1m/znVo/cz1S/s3+u/vB+kH/K+oB/vv8d6/vqeegZ5cf7sfCZ/dv/J7Af61f/Lsz+Y/hX8fP2X49+e/mD9ue1/NDiWd5f6/8xvbHxT3kn88/w35UflvunvHC+tf6b8r/7t6detDdXcfNQA/Q/+09Sf/c/yv5He4z6T/4v+c+AP+Y/1r/X/3v90v8p////p5Gf3I9nb9rv/+uVqgbzOaaZIT/bi4Jn/Vw8m7uTbQPiuZkX9A4MS1zNY3WTwEdYSroz/xXX1JX/sYZz8IC6pQtIZlOMBP8hpaVhCLBSjdzHtpyGQRfYGFxT8lotbTHQ2Hj+UYU//Bq7T2niy2WNOdhcT98rLVdzBpHdXTU/MjnzBOAa46HfxcyVdcrFENXrvkTOfLa1jlXB4fiftHpVoffUYDTjKJ4twXbyRz8JDUenW+9Ib7T4bVP8u1xERCqYjORwJJ8j6HktleuTIGhL16VSdUQdqmhv6LojHDjYt61GbNC+R05vnd4b56JFpkh8C0X/5ruGvMixTmF8gOXpNujvRr3aoLy9J7n1d7cr+TEweXqMsjj6lu7M9rT2HWa14s5ORCFlF7Fa+R+eC9V8BT1hsN+sQALh+PfFF0kJcW6L40St+q/LNPvs/9bZNy+6dXr//4wCb+vLbrPiP/paHYbIAA/v7gKn1nEO8ivVR/dSdvVNlx/wdKI2x2hAINrPGJJYXNO+emt+T6Nkm6bc+r9tEm2o9fggzp/Jv/WnueXX+hyX7lDxkZIMsUg4RvNDWudsGNVSCny5mJSqBDh/6b7ZNQOnXrZjhIFxV7vv+2V/AWd78/Gp48y18mS7+ly6fW/cKLJoB65b1+CdI3wvqN102QcPKbt8smRRZHLWk/CCtaxGg5E4iK9wN2nPSADHEEkJ9GMXGs8Dj0i7agXeTWqOfeCGJn+sQiOvjv/XXcj42cmEQoYHC3tod/xwOQYqSBgh+skWDDmjzAIuuycu70E2UFn74gp4j/zY8L90lyVcOQ48xV5CGYLi2oO+i/mqIXcCOiEmTt/5AwRa4g8DDucg2mrkujCmtIcFymBHJCNntGYSWZxhc+s4nABbOMceSp5lWB2e+QXQZVkFSh7vu6aKq/e8+r7Xs/6NbRCyccEse31LxK1V44ptyhZiGC/llLaRlRS0dJEAbtvUQ56SmiKTGoW06EwaL63m1QljcXWefStY+NO9pHRtQfJc2MLu3G2DArPAJf5qkvDD9eMRXLnLEqNXxw57k9Ts8KoXvvYdtxS7L9BJMKvREMA/7XSoH4WzcOYEfK96Bua9X0M3C90u2/w0Aj+loaom1kNFshJukh5EaBpA0t/YZJxissvMZeWDvrGR3njpTaEimlptiSBGqQX4TPdMqrUdcFpUZP2qRxI4kYrFpx6+FWbD6biClAFd19/6x0kPRQwYYsNfN+2FZIdOWHOmpso0nVl8B4KttBxIP4BnNzPHYEbCih8/FTdS7fcSrbpcro5ZoVzcol6PtxbyT/KRaXKvcboQy2kLjqeY14r/KQzsRMwGDFeKrHi7Aopg4lx2I5v60ZKt1+789M6nurZ/kYbs9KK9QBLFm3VtB0K3VFEWaX7c626s5EMGdKnPvAgTQg9Gsfe5/xkFccjhJFDeOh43ekRrxJJttY8IOK5yfNFtNjwg3vZ5c3kbw+wcvL7e1tv+ad2AL50tTaX/OFv/o8/UYq7Ah+Alp/+3u8OMpbrf4a5lZIBY0FfW1fyT+ZJSkOhhRJUuXj0Ogs4TJ66CIEt0izrF1iDhmv5kvgqhmC8EUzmAQ3B0OZchQbYPeuMX2rXIr8K1V9jRh4E+Zjyx/EYsU+AuH4MxRcwNZReGbgheZ+J71W/VrHTY8wmzl9bsHg2Hiq2W1f5XI2f7g3+kXfVPXqOXv8JtDZoKSvtd21VnlDiNAn3Qb2K9p887UFUG2gLjuHw9LI8g/WYT6INUEV7SnDcspSvdUQpVLDei7Wkv4y4LBrd4s0X9NW2aT2U5jHT1ITkf31m3p+wnRwv7v3CQDggcG+WHI8xFV/3RLN84nBeJTSuh3lhCVf/GScKkqS6jmgK5VKdtzOz+jqDDr6VpPbdoybO00JAfJN9F0HsMvDs4Vqwlnf8aNAFVCRFEo1y0k9LBqOikmhsfbRDi0qkvEbzFSayQ+INiSFmPdO4iiR7v/GJg2DF8C0xFBy9TxPlrsG/bmetoaD4hB9eFKl3xFXqanv06IdJEcjq7FakMK1NabCST24m1q17PQs/ZIjrwFS4FuMgcT4SgRZ2KJht8OlDKRcvrEzHM0TM2l39L21ch0/5AmjOy9UadAn8ogsrRH9ZYRNgmf+mCODgKcs70adRxcQryKdNxQA7kx6WXmi9iNwab02rd4Da58SbobHCqGAS4Cgt4zXKtfoIiJ1GcXpmNvFpSYK/DUtZH+nns9ltfuO1BWaZd9xnL2UV8lL8ojYNFTtlUd5JZMBnLLG3bYG1K8tFDQ9v+IbL2WnqEUmHu3F0oZfeJDqmJ3osTTqBkTqXZhInpVKBeAwtyDL5lT9Q4fgUGkE7mvnpOA66D0wWQkmndOtsuS/Kt2qjVLjxrzryhYlEB5COtrOQfU1/beb8IvcVF6hkuusMLaG8DdNkoAx1Sx7ByGjU84ROFwPdYbQPnVadGwGnYmn1L7Vr59Ax5Mhn05KC4Tv883HFgr+TckstvjtLnUqQHJWU847UzLbWd3cPXRGhX5VFVZXIdZcc5g3M6ZrAZ2uOm/hlpfP/+tOrJRnIGYfeJzzEO48vn4JRYwv8PN0CtBQVaKRqGf9imTNGvZFiCmQVqUIXx1xowF9EZ6Q7icD8qMYd7Gsdk4//GlwDddF8xKXd5Y3u4pO7t0E9LipG+BAm8TiMEF3RN2b4h38fLnxBlSRbjrc39b/JNBZ+mXywAz1U/QcWz63PDZ/q+Rng1k3d2T20ZErkuIZpZV2iLs4g25ZXqagQXyRmSwFNyGpzQ2Sp8zoXmwAPhIYKDslwWerpYgqRRLRImD3Le3dYdRC3H/+MmSCKaRFAQNtFYvDtai3wo9CRN+73XGYjH8794Dq5mVgdaYdKCsuyYWmdNXv1mZDMdZQq933jLD+aE043yOg3d8q6VaptA3qFCZKUdaYgb0lU06dSt1jQWSNbyPaOdyFSLgs/Yy3WrzNLg9Eder7SEGqqsWLWNptrJzWSvmUD6tHWF5PkyVdbi9M3ui6uGdDxGi6SC04ykqPDOWSPzibSJpQdUFu/pGTxyyLBttA60o3fQ+VfXaK5nrMc4RBx8T7pHs+DH1F1g7inbcdFyS1C2HSjyo59fdcEZYyXCuI6I6FxKSplAf8KJUyxXL8XkxvM0Qm+rLOk9mOu9D+9hmlLk5/Da/OdgGPg2ZQv+HWCl3AFwuRD1gpsAn1TU/cZoeE5yxkvXUXEJIpscAFvQUqH0bsB2i9XkCLOfbzhdHWLwUSizntRbgEIymhljmsrKG6ORto/yklZFgkN8kUr7z9b0ejqn9pjMjqes1GlRpx5CiLC6eRI/rtC6GLSfhuzMAFvDzydPaNH68kCuQvqc7aE1xjh/A1M55h41Mvxa7LzZjDmT0OXaoSjdUMc20ANd2yf1yDqX8EvgDUhRaYBXikvXY8qFpnWqDiaiaXmaZdCuoAto/dl7C4EQV6PW78CynpxJ3lEd9BkBgRw2PEOCdExKt96JlqZuKNvvD6uCsdHIEySUhtuSfJ1sIKZZu6OerTZiS6H1L07vz7IcviMXR/T3sPwK17Ro+x8jigdx/f7oTsZznkvWucaQn2+iyGgwTVsGqqkcMvvHoTEpDQft9DU3h1N5jj6eMiM3nvlG00qaMR2pFBk5SiU4tJVowS0rP8hBIv26fXFPdGmKjpjv0FM3RNkObGzCoal3T4uv+4DrB4f58+ODCrvntriNdf1LJTkfXAxCbpr0udOfvMjZof0dbS+h46TGyRU7prmcNYpsayrErMHI8m6lkCvmb5ORPAqWwMxIf7lfJ8QpztKu6pQAR83v87JrRfrGUKZWz0TltR6LG3QxcKV30V2/X6VcN3VNwVFVehxwODG40jddz/8LIcAzDF/h0Bc7HrNUVaAHdKSpvLU+/cIpKGuaEbzyOY8IxuuW6fC53l38QMQqA0FPcFmZmPWK/7sraNVq5f/oD09vv0xoFB7g/1P3H5O5XzmnFeD0Xo4nAYEv1Qj/dcdzkMHgNpKcTb38TDE1XjXd5Zj6KN54cF3YO2uIjbdu79pdy7W7HqLgOV5MjzRgttAMeBzjxH4zlx2GHaSKWwmC1uS4z8L8+Kyk8JKXZ1qnqKz038E0EndeV9SyW3iVIOH8oJAa4Mus6c9kQ6EbfMR8V3td5/er1ZetzB68ljIgpttSfu1lGw8g+wMn3Fy/Jxv3NgkslZGMvlpiFscaUURw50F1zHh5bKaUgFMlUjocfE6ZqH9SocTHCmO4OTe/xJv8OfjNgdydZl32V6E2FwE/H4dj+UNKzHSjDTPqIHIDuiO4qFZWCXQZDPYC8QQBxbA01nedUZJvfdatm/htcjt4OgmRLfoJai7FA09XGTijXCMH0JJpdIfgyR2nF34lfTCksZAxIvjZ39sy2nh0krAwkEUVMnn4wj76EPrOYvE1gN0Bgg/gwwSpeAQr1l+4BKzVrin8KeBW9LQb8lsYoEqv7pfi5QC2PXUEnbtZX5GqtWMd9kM79m/r4U5BJq+xyjWZ2HmT3wRFtM+ahJ+f7+FHS+iI8/chTTL9lMSapp6RcpwKga4NYJSUYE0YHXJoE7tkZOYZRRSBeLdb/4QmYj3t/vwmJ0zpquoFtC0/p4WFw3A4u0uja3iAxZs9rHh7lZnQ+KewB9yuPIfq+fwO/Ni6NQDW/sauoG6e8UyNhcyJ2YCRpBd7nLf8sC/D1rvM2VwrhlVibi6mhsHsoP46IKI9MHha3UUE1Ppk1kzjKcauLxj46QnKUVw0kGtJOBeKdLjFVvPa4F9KBcrQHHkNMRv7PJ4nDKOXcprRZpnBsqvlOwYUpjbtTH3Aq9Z5Sg+GM2MkUv+I8u5Khcq2LrDg3ztkaGfLB61CIJ4W4/HHe2TcZj376hOaNUvur3UWPlGrsL25WrJlhY/ixl32lN2yebT558ho6gO08EQWxkQP82uKIt7pJSgbCxgHowu4JsQpFVKd5q0vaRn6dvoPOjzeyTrUm6aa14Xz1IkV1pQ0Ma8HQl3wcdS4hdZd8UefttWC0OwX2meJnt+6erIVUZQ4NMRlz3dae/k9tV7C/iNQK/bHFVeMMVDguucbEywVtSlFRdT58YbVh2bwlGjdSbFN8o5BztKSRWR8NCCahRy5ly4E3Si7HXnkfLeMwXpVQcjH+ZkTXtbdPiiThy0oUwHxV7zzSADWkIoXDO6BY5UG2hqHEh9GjmEPZhgdCrPiIKdiQlE2ips+1zgFC4FX8oCuQ5h5OzNpiM1gVBRaK9T+wTxEoRdo+QZMzwRbAzh7GNT+BbWgoGHnlTEj7XwgJf65HwWGPkqBQwNz84Ea4TKGPAhI6BisNNbGtBZXtjit8EbUnVkhuZ5ehvDa2o1flrdx9w7MGxzdKUdg+arxfZ7QtYK5sASpCuqq5JIgj1lWa+4MboyjYwppIUrzfpbAzYbHamdlzzwqSkOEaQxKBxmvHdmtFIiDcbMhoY729TW1EsOJLcQRMalxnvYgU+pFqOD9MYOZEo5nigAc8DeZwqmvzP6GcOE0IuICt1ha8AuhCJ0Ak96+mp8UQPbIA3QNkvn0HxXoCT9seUGfx7ggF73qDRfWXNRus/L69HnSirdn/xy8j3Hw0j+B3X6GnKkdsfY7xbZxRViP9wRpEh25aOC5s+NCQXIsuIXkkXkpcN/bMFE7dz/sF+0N5xaoAA";
+const DOC_TYPES = { proposta: ["Proposta comercial", "PROP"], relatorio: ["Relatório mensal", "REL"], entrega: ["Documento de entrega", "ENT"] };
+const CO_DEFAULT = { legalName: "Alpha Tech Solutions", taxId: "", address: "", email: "", phone: "+351 913 624 259", website: "https://alphatechsolutions-xi.vercel.app", signer: "Sandra Silva", role: "Fundadora", payment: "50% na adjudicação e 50% na entrega.", validity: 15, warranty: "30 dias de correção de erros, sem custo, após a entrega.", curPT: "€", curBR: "R$", vatPT: 23, vatBR: 0 };
+const company = () => Object.assign({}, CO_DEFAULT, S.settings.company || {});
+const DKEYS = ["proposal", "report", "delivery", "no", "date", "to", "contact", "taxid", "address", "objective", "desc", "qty", "unit", "total", "subtotal", "vat", "vatna", "timeline", "weeks", "payment", "validity", "until", "notes", "accept", "signature", "period", "summary", "metrics", "metric", "value", "remark", "tasks", "next", "prepared", "project", "deliveryDate", "delivered", "links", "access", "accessNote", "warranty", "maintenance", "acceptTitle", "acceptText", "company", "client", "email", "phone", "website"];
+const DVALS = {
+  "pt-PT": ["Proposta comercial", "Relatório mensal", "Documento de entrega", "N.º", "Data", "Para", "A/C", "NIF", "Morada", "Objeto", "Descrição", "Qtd.", "Preço unitário", "Total", "Subtotal", "IVA", "IVA não aplicável", "Prazo de execução", "semanas", "Condições de pagamento", "Validade da proposta", "até", "Notas", "Aceite pelo cliente", "Assinatura", "Período", "Resumo", "Indicadores", "Indicador", "Valor", "Nota", "Trabalho realizado", "Próximos passos", "Preparado por", "Projeto", "Data de entrega", "Itens entregues", "Endereços", "Acessos", "As credenciais e os acessos foram entregues em separado, por um canal seguro.", "Garantia e suporte", "Manutenção", "Termo de aceitação", "O cliente confirma a receção dos itens acima e a conformidade com o que foi acordado.", "Alpha Tech Solutions", "Cliente", "E-mail", "Telefone", "Site"],
+  "pt-BR": ["Proposta comercial", "Relatório mensal", "Documento de entrega", "Nº", "Data", "Para", "A/C", "CNPJ/CPF", "Endereço", "Objeto", "Descrição", "Qtd.", "Preço unitário", "Total", "Subtotal", "Impostos", "Impostos não aplicáveis", "Prazo de execução", "semanas", "Condições de pagamento", "Validade da proposta", "até", "Observações", "Aceite do cliente", "Assinatura", "Período", "Resumo", "Indicadores", "Indicador", "Valor", "Observação", "Trabalho realizado", "Próximos passos", "Preparado por", "Projeto", "Data de entrega", "Itens entregues", "Endereços", "Acessos", "As credenciais e os acessos foram entregues separadamente, por um canal seguro.", "Garantia e suporte", "Manutenção", "Termo de aceite", "O cliente confirma o recebimento dos itens acima e a conformidade com o que foi combinado.", "Alpha Tech Solutions", "Cliente", "E-mail", "Telefone", "Site"],
+  es: ["Propuesta comercial", "Informe mensual", "Documento de entrega", "N.º", "Fecha", "Para", "A/A", "NIF", "Dirección", "Objeto", "Descripción", "Cant.", "Precio unitario", "Total", "Subtotal", "IVA", "IVA no aplicable", "Plazo de ejecución", "semanas", "Condiciones de pago", "Validez de la propuesta", "hasta", "Notas", "Aceptado por el cliente", "Firma", "Período", "Resumen", "Indicadores", "Indicador", "Valor", "Nota", "Trabajo realizado", "Próximos pasos", "Preparado por", "Proyecto", "Fecha de entrega", "Elementos entregados", "Direcciones", "Accesos", "Las credenciales y los accesos se entregaron por separado, por un canal seguro.", "Garantía y soporte", "Mantenimiento", "Acta de aceptación", "El cliente confirma la recepción de los elementos anteriores y su conformidad con lo acordado.", "Alpha Tech Solutions", "Cliente", "Correo electrónico", "Teléfono", "Sitio web"],
+  en: ["Commercial proposal", "Monthly report", "Delivery document", "No.", "Date", "To", "Attn.", "Tax ID", "Address", "Subject", "Description", "Qty", "Unit price", "Total", "Subtotal", "VAT", "VAT not applicable", "Delivery time", "weeks", "Payment terms", "Proposal validity", "until", "Notes", "Accepted by the client", "Signature", "Period", "Summary", "Key figures", "Figure", "Value", "Note", "Work completed", "Next steps", "Prepared by", "Project", "Delivery date", "Delivered items", "Links", "Access", "Credentials and access were delivered separately through a secure channel.", "Warranty and support", "Maintenance", "Acceptance statement", "The client confirms receipt of the items above and conformity with what was agreed.", "Alpha Tech Solutions", "Client", "Email", "Phone", "Website"]
+};
+const DL = {}; for (const k of Object.keys(DVALS)) DL[k] = Object.fromEntries(DKEYS.map((key, i) => [key, DVALS[k][i]]));
+const LOC = { "pt-PT": "pt-PT", "pt-BR": "pt-BR", es: "es-ES", en: "en-US" };
+const docLangOf = l => (l.client && l.client.lang) || (l.market === "BR" ? "pt-BR" : "pt-PT");
+function money(n, cur, lang){
+  const v = Number(n || 0).toLocaleString(LOC[lang] || "pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  if (cur === "€" && (lang === "pt-PT" || lang === "es")) return v + " €";
+  return lang === "en" ? cur + v : cur + " " + v;
+}
+const dfmt = (iso, lang) => { const d = new Date(String(iso).slice(0, 10) + "T12:00:00"); return isNaN(d) ? "" : d.toLocaleDateString(LOC[lang] || "pt-PT", { day: "2-digit", month: "2-digit", year: "numeric" }); };
+const nl = x => esc(x).replace(/\n/g, "<br>");
+const lines = x => String(x || "").split("\n").map(t => t.trim()).filter(Boolean);
+function docNo(type){
+  S.docSeq = S.docSeq || {}; const y = new Date().getFullYear(), k = type + "-" + y; S.docSeq[k] = (S.docSeq[k] || 0) + 1;
+  return `AT-${DOC_TYPES[type][1]}-${y}-${String(S.docSeq[k]).padStart(3, "0")}`;
+}
+function docDefaults(l, type){
+  const co = company(), br = l.market === "BR", base = { lang: docLangOf(l), cur: br ? co.curBR : co.curPT, date: today() };
+  if (type === "proposta") return { ...base, title: "", objective: l.wanted ? `Resposta ao pedido: ${l.wanted}` : "", lines: l.deal && l.deal.value !== "" && l.deal.value !== undefined ? [{ desc: "Serviços acordados", qty: 1, unit: +l.deal.value }] : [{ desc: "", qty: 1, unit: "" }], vat: br ? co.vatBR : co.vatPT, weeks: l.deal && l.deal.weeks !== undefined ? l.deal.weeks : "", payment: co.payment, validity: co.validity, notes: "" };
+  if (type === "relatorio") return { ...base, period: today().slice(0, 7), summary: "", metrics: [{ name: "", value: "", note: "" }], tasks: "", next: "", notes: "" };
+  return { ...base, project: "", deliveryDate: today(), items: "", links: "", warranty: co.warranty, maintenance: "", notes: "" };
+}
+function proposalTotals(d){
+  const sub = (d.lines || []).reduce((a, r) => a + (+r.qty || 0) * (+r.unit || 0), 0), vat = sub * ((+d.vat || 0) / 100);
+  return { sub, vat, total: sub + vat };
+}
+const QUICK = {
+  PT: ["Website institucional", "Landing page", "Loja online", "Sistema de gestão à medida", "Automação de processos", "Assistente de IA para WhatsApp", "Gestão de redes sociais e conteúdo", "SEO e anúncios", "Manutenção mensal"],
+  BR: ["Site institucional", "Landing page", "Loja virtual", "Sistema de gestão sob medida", "Automação de processos", "Assistente de IA para WhatsApp", "Gestão de redes sociais e conteúdo", "SEO e anúncios", "Manutenção mensal"]
+};
+
+/* ---- HTML do documento (autónomo: serve para PDF, impressão e ficheiro) ---- */
+function docHtml(doc, l){
+  const co = company(), lang = doc.data.lang || "pt-PT", T = DL[lang] || DL["pt-PT"], d = doc.data, cl = l.client || {};
+  const head = `<div class="hd"><div class="lg"><img src="${LOGO_DATA}" alt=""><div><b>${esc(co.legalName)}</b>${co.taxId ? `<br>${esc(T.taxid)}: ${esc(co.taxId)}` : ""}${co.address ? `<br>${nl(co.address)}` : ""}</div></div>
+    <div class="ct">${co.email ? esc(co.email) + "<br>" : ""}${co.phone ? esc(co.phone) + "<br>" : ""}${co.website ? esc(co.website.replace(/^https?:\/\//, "")) : ""}</div></div>
+    <div class="tt"><h1>${esc(DL[lang][{ proposta: "proposal", relatorio: "report", entrega: "delivery" }[doc.type]])}</h1><div class="mt">${esc(T.no)} <b>${esc(doc.no)}</b> · ${esc(T.date)}: ${esc(dfmt(d.date, lang))}</div></div>
+    <div class="cb"><b>${esc(T.to)}:</b> ${esc(l.name)}${cl.contactName ? `<br>${esc(T.contact)}: ${esc(cl.contactName)}` : ""}${cl.taxId ? `<br>${esc(T.taxid)}: ${esc(cl.taxId)}` : ""}${cl.address ? `<br>${nl(cl.address)}` : ""}${l.email ? `<br>${esc(l.email)}` : ""}</div>`;
+  const sig = (left, right) => `<div class="sg"><div><div class="ln"></div>${left}</div>${right ? `<div><div class="ln"></div>${right}</div>` : ""}</div>`;
+  let body = "";
+  if (doc.type === "proposta") {
+    const tot = proposalTotals(d), vatLabel = (+d.vat || 0) > 0 ? `${T.vat} (${d.vat}%)` : T.vatna, until = new Date(d.date + "T12:00:00"); until.setDate(until.getDate() + (+d.validity || 0));
+    body = (d.title ? `<h2>${esc(d.title)}</h2>` : "") + (d.objective ? `<h3>${esc(T.objective)}</h3><p>${nl(d.objective)}</p>` : "") +
+      `<table class="pr"><thead><tr><th>${esc(T.desc)}</th><th class="r">${esc(T.qty)}</th><th class="r">${esc(T.unit)}</th><th class="r">${esc(T.total)}</th></tr></thead><tbody>${(d.lines || []).filter(r => r.desc || +r.unit).map(r => `<tr><td>${nl(r.desc)}</td><td class="r">${esc(r.qty)}</td><td class="r">${esc(money(r.unit, d.cur, lang))}</td><td class="r">${esc(money((+r.qty || 0) * (+r.unit || 0), d.cur, lang))}</td></tr>`).join("")}</tbody></table>
+      <table class="tot"><tr><td>${esc(T.subtotal)}</td><td class="r">${esc(money(tot.sub, d.cur, lang))}</td></tr><tr><td>${esc(vatLabel)}</td><td class="r">${(+d.vat || 0) > 0 ? esc(money(tot.vat, d.cur, lang)) : "—"}</td></tr><tr class="gt"><td>${esc(T.total)}</td><td class="r">${esc(money(tot.total, d.cur, lang))}</td></tr></table>` +
+      (d.weeks !== "" && d.weeks !== undefined ? `<h3>${esc(T.timeline)}</h3><p>${esc(d.weeks)} ${esc(T.weeks)}</p>` : "") + (d.payment ? `<h3>${esc(T.payment)}</h3><p>${nl(d.payment)}</p>` : "") +
+      `<h3>${esc(T.validity)}</h3><p>${esc(d.validity)} (${esc(T.until)} ${esc(until.toLocaleDateString(LOC[lang] || "pt-PT", { day: "2-digit", month: "2-digit", year: "numeric" }))})</p>` + (d.notes ? `<h3>${esc(T.notes)}</h3><p>${nl(d.notes)}</p>` : "") +
+      sig(`<b>${esc(co.signer)}</b><br>${esc(co.role)} · ${esc(co.legalName)}`, `<b>${esc(T.accept)}</b><br>${esc(T.signature)} / ${esc(T.date)}`);
+  } else if (doc.type === "relatorio") {
+    const per = new Date(d.period + "-01T12:00:00").toLocaleDateString(LOC[lang] || "pt-PT", { month: "long", year: "numeric" }), mets = (d.metrics || []).filter(m => m.name || m.value);
+    body = `<h2>${esc(per)}</h2>` + (d.summary ? `<h3>${esc(T.summary)}</h3><p>${nl(d.summary)}</p>` : "") +
+      (mets.length ? `<h3>${esc(T.metrics)}</h3><table class="pr"><thead><tr><th>${esc(T.metric)}</th><th class="r">${esc(T.value)}</th><th>${esc(T.remark)}</th></tr></thead><tbody>${mets.map(m => `<tr><td>${esc(m.name)}</td><td class="r"><b>${esc(m.value)}</b></td><td>${esc(m.note)}</td></tr>`).join("")}</tbody></table>` : "") +
+      (lines(d.tasks).length ? `<h3>${esc(T.tasks)}</h3><ul>${lines(d.tasks).map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : "") + (lines(d.next).length ? `<h3>${esc(T.next)}</h3><ul>${lines(d.next).map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : "") +
+      (d.notes ? `<h3>${esc(T.notes)}</h3><p>${nl(d.notes)}</p>` : "") + sig(`<b>${esc(T.prepared)}: ${esc(co.signer)}</b><br>${esc(co.role)} · ${esc(co.legalName)}`);
+  } else {
+    body = `<h2>${esc(d.project || l.name)}</h2><p><b>${esc(T.deliveryDate)}:</b> ${esc(dfmt(d.deliveryDate, lang))}</p>` +
+      (lines(d.items).length ? `<h3>${esc(T.delivered)}</h3><ul class="ck">${lines(d.items).map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : "") + (lines(d.links).length ? `<h3>${esc(T.links)}</h3><ul>${lines(d.links).map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : "") +
+      `<h3>${esc(T.access)}</h3><p>${esc(T.accessNote)}</p>` + (d.warranty ? `<h3>${esc(T.warranty)}</h3><p>${nl(d.warranty)}</p>` : "") + (d.maintenance ? `<h3>${esc(T.maintenance)}</h3><p>${nl(d.maintenance)}</p>` : "") + (d.notes ? `<h3>${esc(T.notes)}</h3><p>${nl(d.notes)}</p>` : "") +
+      `<h3>${esc(T.acceptTitle)}</h3><p>${esc(T.acceptText)}</p>` + sig(`<b>${esc(co.signer)}</b><br>${esc(co.role)} · ${esc(co.legalName)}`, `<b>${esc(T.client)}</b><br>${esc(l.name)}`);
+  }
+  const css = `*{box-sizing:border-box}body{margin:0;padding:28px;font:14px/1.55 Segoe UI,Arial,sans-serif;color:#1d1530;background:#fff}.hd{display:flex;justify-content:space-between;gap:20px;border-bottom:3px solid #7c3aed;padding-bottom:14px}.lg{display:flex;gap:12px;align-items:center}.lg img{width:54px;height:54px;border-radius:12px}.ct{text-align:right;font-size:.85rem;color:#4b4563}.tt{margin:22px 0 4px}h1{margin:0;font-size:1.7rem;color:#5b21b6;letter-spacing:-.02em}.mt{color:#6b6480;font-size:.88rem}.cb{background:#f6f2fd;border-radius:10px;padding:10px 14px;margin:14px 0 6px}h2{font-size:1.25rem;margin:22px 0 6px}h3{font-size:.92rem;margin:16px 0 4px;color:#5b21b6;text-transform:uppercase;letter-spacing:.04em}p{margin:4px 0}ul{margin:4px 0 4px 18px;padding:0}table{width:100%;border-collapse:collapse}.pr th{background:#f1ecfb;text-align:left;padding:8px;font-size:.8rem;border-bottom:2px solid #d9cdf7}.pr td{padding:8px;border-bottom:1px solid #e6dff5;vertical-align:top}.r{text-align:right}.tot{width:56%;margin:10px 0 0 auto}.tot td{padding:5px 8px}.gt td{font-weight:800;font-size:1.05rem;border-top:2px solid #7c3aed;color:#5b21b6}.ck{list-style:none;margin-left:0}.ck li::before{content:"\\2611  ";color:#16a34a}.sg{display:flex;gap:40px;margin-top:54px}.sg>div{flex:1;font-size:.88rem}.ln{border-top:1px solid #1d1530;margin-bottom:6px}@page{size:A4;margin:16mm}@media print{body{padding:0}}`;
+  return `<!doctype html><html lang="${lang === "pt-BR" ? "pt-BR" : lang === "pt-PT" ? "pt-PT" : lang}"><head><meta charset="utf-8"><title>${esc(doc.no)}</title><style>${css}</style></head><body>${head}${body}</body></html>`;
+}
+
+/* ---- editor de documentos ---- */
+function lineRow(r){ return `<div class="drow" data-r><input data-k="desc" placeholder="Descrição" value="${esc(r.desc || "")}"><input data-k="qty" type="number" min="0" step="0.5" value="${esc(r.qty ?? 1)}"><input data-k="unit" type="number" min="0" step="0.01" placeholder="0,00" value="${esc(r.unit ?? "")}"><button type="button" class="b" data-rm title="Remover">×</button></div>`; }
+function metricRow(r){ return `<div class="drow m" data-r><input data-k="name" placeholder="Indicador" value="${esc(r.name || "")}"><input data-k="value" placeholder="Valor" value="${esc(r.value || "")}"><input data-k="note" placeholder="Nota" value="${esc(r.note || "")}"><button type="button" class="b" data-rm title="Remover">×</button></div>`; }
+function docEditor(l, type, doc){
+  const d = doc ? JSON.parse(JSON.stringify(doc.data)) : docDefaults(l, type), f = $("#dform"), co = company(), dlg = $("#dlg"); dlg.classList.add("wide");
+  const tx = (id, label, v, extra = "") => `<label class="f">${label}<input id="${id}" value="${esc(v ?? "")}" ${extra}></label>`;
+  const ta = (id, label, v, h = 70) => `<label class="f">${label}<textarea id="${id}" style="min-height:${h}px">${esc(v ?? "")}</textarea></label>`;
+  let fields = "";
+  if (type === "proposta") fields = `${tx("dTitle", "Título (opcional)", d.title, 'placeholder="ex.: Website institucional"')}${ta("dObj", "Objeto da proposta", d.objective, 60)}
+    <div class="f" style="margin-top:8px">Serviços e preços</div><div id="dRows">${(d.lines || []).map(lineRow).join("")}</div>
+    <div class="actions"><button type="button" class="b" id="dAdd">+ Linha</button><select id="dQuick" style="max-width:260px"><option value="">+ Serviço habitual…</option>${(l.market === "BR" ? QUICK.BR : QUICK.PT).map(q => `<option>${esc(q)}</option>`).join("")}</select></div>
+    <div class="dtot" id="dTot"></div>
+    <div class="grid2">${tx("dVat", "IVA / impostos (%)", d.vat, 'type="number" min="0" step="0.5"')}${tx("dWeeks", "Prazo de execução (semanas)", d.weeks, 'type="number" min="0" step="0.5"')}${tx("dVal", "Validade (dias)", d.validity, 'type="number" min="1"')}</div>
+    ${ta("dPay", "Condições de pagamento", d.payment, 56)}${ta("dNotes", "Notas", d.notes, 56)}`;
+  if (type === "relatorio") fields = `${tx("dPeriod", "Mês do relatório", d.period, 'type="month"')}${ta("dSum", "Resumo do mês", d.summary, 90)}
+    <div class="f" style="margin-top:8px">Indicadores</div><div id="dRows">${(d.metrics || []).map(metricRow).join("")}</div><div class="actions"><button type="button" class="b" id="dAdd">+ Indicador</button></div>
+    ${ta("dTasks", "Trabalho realizado (um por linha)", d.tasks, 90)}${ta("dNext", "Próximos passos (um por linha)", d.next, 70)}${ta("dNotes", "Notas", d.notes, 50)}`;
+  if (type === "entrega") fields = `${tx("dProj", "Projeto", d.project, `placeholder="${esc(l.name)}"`)}${tx("dDel", "Data de entrega", d.deliveryDate, 'type="date"')}
+    ${ta("dItems", "Itens entregues (um por linha)", d.items, 100)}${ta("dLinks", "Endereços (um por linha)", d.links, 70)}${ta("dWar", "Garantia e suporte", d.warranty, 56)}${ta("dMain", "Manutenção", d.maintenance, 56)}${ta("dNotes", "Notas", d.notes, 50)}`;
+  const warn = (!co.taxId || !co.address) ? `<p class="note" style="color:#92400e">Falta o NIF ou a morada da empresa em Definições, Dados da empresa. O documento sai sem eles.</p>` : "";
+  f.innerHTML = `<h3 style="margin-top:0">${esc(doc ? "Editar " + doc.no : "Novo documento")} · ${esc(DOC_TYPES[type][0])}</h3><div class="note">Cliente: <b>${esc(l.name)}</b></div>${warn}
+    <div class="grid2" style="margin-top:8px"><label class="f">Língua do documento<select id="dLang">${[["pt-PT", "Português (Portugal)"], ["pt-BR", "Português (Brasil)"], ["es", "Español"], ["en", "English"]].map(([k, v]) => `<option value="${k}" ${d.lang === k ? "selected" : ""}>${v}</option>`).join("")}</select></label>
+      <label class="f">Moeda<select id="dCur">${["€", "R$", "$", "£"].map(c => `<option ${d.cur === c ? "selected" : ""}>${c}</option>`).join("")}</select></label>${tx("dDate", "Data", d.date, 'type="date"')}</div>${fields}
+    <div class="actions"><button type="button" class="b pri" id="dGo">${doc ? "Guardar e ver" : "Gerar documento"}</button><button type="button" class="b" id="dBack">Voltar ao lead</button></div>`;
+  if (!dlg.open) dlg.showModal();
+  const rowsBox = $("#dRows"), mkRow = type === "proposta" ? lineRow : metricRow, readRows = () => $$("[data-r]", f).map(r => Object.fromEntries($$("[data-k]", r).map(i => [i.dataset.k, i.value])));
+  const retotal = () => { if (type !== "proposta") return; const dd = { lines: readRows(), vat: $("#dVat").value }, t = proposalTotals(dd); $("#dTot").innerHTML = `Subtotal <b>${esc(money(t.sub, $("#dCur").value, $("#dLang").value))}</b> · ${(+dd.vat || 0) > 0 ? "IVA " + esc(money(t.vat, $("#dCur").value, $("#dLang").value)) + " · " : ""}Total <b>${esc(money(t.total, $("#dCur").value, $("#dLang").value))}</b>`; };
+  const bindRow = () => { $$("[data-rm]", f).forEach(b => b.onclick = () => { if ($$("[data-r]", f).length > 1) b.closest("[data-r]").remove(); retotal(); }); $$("[data-r] input", f).forEach(i => i.oninput = retotal); };
+  if (rowsBox) { $("#dAdd").onclick = () => { rowsBox.insertAdjacentHTML("beforeend", mkRow({})); bindRow(); }; bindRow(); }
+  const q = $("#dQuick"); if (q) q.onchange = () => { if (!q.value) return; const empty = $$("[data-r]", f).find(r => !$('[data-k="desc"]', r).value && !$('[data-k="unit"]', r).value); if (empty) { $('[data-k="desc"]', empty).value = q.value; } else rowsBox.insertAdjacentHTML("beforeend", mkRow({ desc: q.value, qty: 1, unit: "" })); q.value = ""; bindRow(); retotal(); };
+  ["dVat", "dCur", "dLang"].forEach(i => { const e = $("#" + i); if (e) e.oninput = e.onchange = retotal; }); retotal();
+  $("#dBack").onclick = () => showLead(l);
+  $("#dGo").onclick = () => {
+    const v = id => ($("#" + id).value || "").trim(), nd = { lang: v("dLang"), cur: v("dCur"), date: v("dDate") || today() };
+    if (type === "proposta") { Object.assign(nd, { title: v("dTitle"), objective: v("dObj"), lines: readRows().map(r => ({ desc: r.desc.trim(), qty: +r.qty || 0, unit: r.unit === "" ? "" : +r.unit })), vat: +v("dVat") || 0, weeks: v("dWeeks") === "" ? "" : +v("dWeeks"), validity: +v("dVal") || 15, payment: v("dPay"), notes: v("dNotes") }); if (!nd.lines.some(r => r.desc && +r.unit > 0)) return toast("Acrescente pelo menos um serviço com preço."); }
+    if (type === "relatorio") { Object.assign(nd, { period: v("dPeriod") || today().slice(0, 7), summary: v("dSum"), metrics: readRows().map(r => ({ name: r.name.trim(), value: r.value.trim(), note: r.note.trim() })), tasks: v("dTasks"), next: v("dNext"), notes: v("dNotes") }); }
+    if (type === "entrega") { Object.assign(nd, { project: v("dProj"), deliveryDate: v("dDel") || today(), items: v("dItems"), links: v("dLinks"), warranty: v("dWar"), maintenance: v("dMain"), notes: v("dNotes") }); if (!lines(nd.items).length) return toast("Indique pelo menos um item entregue."); }
+    l.docs = l.docs || []; let rec = doc;
+    if (rec) { rec.data = nd; rec.date = nd.date; rec.updated = new Date().toISOString(); hist(l, "doc", `${rec.no} atualizado.`); }
+    else { rec = { id: uid(), type, no: docNo(type), date: nd.date, data: nd }; l.docs.push(rec); hist(l, "doc", `${DOC_TYPES[type][0]} ${rec.no} gerado.`); }
+    if (type === "proposta") rec.total = proposalTotals(nd).total, rec.cur = nd.cur;
+    save(); render(); docPreview(l, rec);
+  };
+}
+function docPreview(l, doc){
+  const f = $("#dform"), dlg = $("#dlg"); dlg.classList.add("wide");
+  f.innerHTML = `<h3 style="margin-top:0">${esc(doc.no)} · ${esc(l.name)}</h3><iframe id="docFrame" title="${esc(doc.no)}" style="width:100%;height:64vh;border:1px solid var(--line);border-radius:12px;background:#fff"></iframe>
+    <div class="actions"><button type="button" class="b pri" data-d="print">Imprimir ou guardar em PDF</button><button type="button" class="b" data-d="html">Descarregar HTML</button><button type="button" class="b" data-d="edit">Editar</button><button type="button" class="b" data-d="lead">Voltar ao lead</button><button class="b" value="x" formnovalidate>Fechar</button></div>
+    <p class="note">Em "Imprimir", escolha "Guardar como PDF" como impressora.</p>`;
+  $("#docFrame").srcdoc = docHtml(doc, l); if (!dlg.open) dlg.showModal();
+  $$("[data-d]", f).forEach(b => b.onclick = () => {
+    const k = b.dataset.d, fr = $("#docFrame");
+    if (k === "print") { fr.contentWindow.focus(); fr.contentWindow.print(); }
+    if (k === "html") download(doc.no + ".html", docHtml(doc, l), "text/html");
+    if (k === "edit") docEditor(l, doc.type, doc);
+    if (k === "lead") showLead(l);
+  });
+}
+function docsBlock(l){
+  const c = l.client || {}, docs = (l.docs || []).slice().reverse();
+  return `<details ${(l.docs || []).length || ["proposta", "negociacao", "ganho"].includes(l.status) ? "open" : ""}><summary>Documentos${(l.docs || []).length ? " (" + l.docs.length + ")" : ""}</summary>
+    <div class="grid2"><label class="f">Pessoa de contacto<input id="ccContact" value="${esc(c.contactName || "")}"></label><label class="f">NIF ou CNPJ<input id="ccTax" value="${esc(c.taxId || "")}"></label>
+      <label class="f">Morada<input id="ccAddr" value="${esc(c.address || "")}"></label><label class="f">E-mail<input id="ccEmail" type="email" value="${esc(l.email || "")}"></label>
+      <label class="f">Língua dos documentos<select id="ccLang">${[["", "Automática (pelo mercado)"], ["pt-PT", "Português (Portugal)"], ["pt-BR", "Português (Brasil)"], ["es", "Español"], ["en", "English"]].map(([k, v]) => `<option value="${k}" ${(c.lang || "") === k ? "selected" : ""}>${v}</option>`).join("")}</select></label></div>
+    <div class="actions"><button type="button" class="b" data-x="saveClient">Guardar dados do cliente</button></div>
+    <div class="actions" style="margin-top:6px"><button type="button" class="b pri" data-x="docProp">Nova proposta</button><button type="button" class="b" data-x="docRep">Relatório mensal</button><button type="button" class="b" data-x="docEnt">Documento de entrega</button></div>
+    ${docs.length ? `<table style="margin-top:8px"><tbody>${docs.map(d => `<tr><td><b>${esc(d.no)}</b></td><td>${esc(DOC_TYPES[d.type][0])}</td><td>${esc(fmtD(d.date))}</td><td>${d.total ? esc(money(d.total, d.cur, d.data.lang)) : ""}</td><td><button type="button" class="b" data-docopen="${d.id}">Abrir</button></td></tr>`).join("")}</tbody></table>` : ""}</details>`;
+}
+function companyCard(){
+  const c = company(), f = (id, label, v, extra = "") => `<label class="f">${label}<input id="${id}" value="${esc(v ?? "")}" ${extra}></label>`;
+  return `<div class="card"><h3 style="margin-top:0">Dados da empresa (documentos)</h3><p class="note">Preencha uma só vez: aparecem em todas as propostas, relatórios e documentos de entrega.</p>
+    <div class="grid2">${f("coName", "Nome legal", c.legalName)}${f("coTax", "NIF", c.taxId)}${f("coAddr", "Morada", c.address)}${f("coMail", "E-mail", c.email, 'type="email"')}${f("coPhone", "Telefone", c.phone)}${f("coSite", "Site", c.website)}${f("coSigner", "Quem assina", c.signer)}${f("coRole", "Cargo", c.role)}
+      ${f("coPay", "Condições de pagamento por defeito", c.payment)}${f("coVal", "Validade das propostas (dias)", c.validity, 'type="number" min="1"')}${f("coWar", "Garantia por defeito", c.warranty)}
+      ${f("coCurPT", "Moeda, clientes de Portugal", c.curPT)}${f("coVatPT", "IVA em Portugal (%)", c.vatPT, 'type="number" min="0" step="0.5"')}${f("coCurBR", "Moeda, clientes do Brasil", c.curBR)}${f("coVatBR", "Impostos no Brasil (%)", c.vatBR, 'type="number" min="0" step="0.5"')}</div>
+    <div class="actions"><button class="b pri" id="coSave">Guardar dados da empresa</button></div></div>`;
+}
+function viewDocs(){
+  const all = []; for (const l of S.leads) for (const d of (l.docs || [])) all.push({ l, d });
+  all.sort((a, b) => (b.d.date || "").localeCompare(a.d.date || "") || b.d.no.localeCompare(a.d.no));
+  const leads = S.leads.slice().sort((a, b) => a.name.localeCompare(b.name));
+  let h = `<div class="legal" style="background:#f3edff;border-color:rgba(124,58,237,.25);color:#3b2a66"><b>Documentos:</b> propostas, relatórios mensais e documentos de entrega, gerados a partir dos dados que preencheu uma só vez (empresa em Definições, cliente no lead). Saem em PT-PT, PT-BR, ES ou EN, com a sua logo, prontos para imprimir ou guardar em PDF.</div>
+  <div class="card"><h3 style="margin-top:0">Novo documento</h3>${leads.length ? `<div class="bar"><label class="f" style="max-width:420px">Cliente<select id="dcClient">${leads.map(l => `<option value="${l.id}">${esc(l.name)} (${esc(STAT[l.status])})</option>`).join("")}</select></label></div>
+    <div class="actions"><button class="b pri" data-newdoc="proposta">Proposta comercial</button><button class="b" data-newdoc="relatorio">Relatório mensal</button><button class="b" data-newdoc="entrega">Documento de entrega</button></div>` : `<p class="note">Ainda não há leads. Crie ou importe um lead primeiro.</p>`}</div>`;
+  if (!all.length) return h + `<div class="empty">Ainda não gerou documentos.</div>`;
+  return h + `<table><thead><tr><th>N.º</th><th>Tipo</th><th>Cliente</th><th>Data</th><th>Valor</th><th></th></tr></thead><tbody>${all.map(({ l, d }) => `<tr><td><b>${esc(d.no)}</b></td><td>${esc(DOC_TYPES[d.type][0])}</td><td>${esc(l.name)}</td><td>${esc(fmtD(d.date))}</td><td>${d.total ? esc(money(d.total, d.cur, d.data.lang)) : "—"}</td><td><button class="b" data-dopen="${l.id}|${d.id}">Abrir</button> <button class="b" data-dedit="${l.id}|${d.id}">Editar</button> <button class="b bad" data-ddel="${l.id}|${d.id}">Apagar</button></td></tr>`).join("")}</tbody></table><p class="note">${all.length} documento(s)</p>`;
+}
+function bindDocs(){
+  $$("[data-newdoc]").forEach(b => b.onclick = () => { const l = byId($("#dcClient").value); if (l) docEditor(l, b.dataset.newdoc); });
+  const find = a => { const [lid, did] = a.split("|"), l = byId(lid); return [l, l && (l.docs || []).find(x => x.id === did)]; };
+  $$("[data-dopen]").forEach(b => b.onclick = () => { const [l, d] = find(b.dataset.dopen); if (d) docPreview(l, d); });
+  $$("[data-dedit]").forEach(b => b.onclick = () => { const [l, d] = find(b.dataset.dedit); if (d) docEditor(l, d.type, d); });
+  $$("[data-ddel]").forEach(b => b.onclick = () => { const [l, d] = find(b.dataset.ddel); if (d && confirm(`Apagar o documento ${d.no}? O número não será reutilizado.`)) { l.docs = l.docs.filter(x => x.id !== d.id); hist(l, "doc", `${d.no} apagado.`); save(); render(); } });
+}
+
+/* ============ fontes de leads: pesquisas prontas + captura rápida ============ */
+const SRC = { instagram:"Instagram", linkedin:"LinkedIn", workana:"Workana", google:"Google", emprego:"Site de emprego", outro:"Outro", radar:"Radar (mapas)", site:"Formulário do site", importado:"Importado ou manual" };
+const SVC = { site:"Site ou landing page", loja:"Loja online", automacao:"Automação e IA", sistemas:"Sistema ou painel", marketing:"Marketing e SEO" };
+const SVC_OFFER = {
+  PT: { site:"sites e landing pages à medida", loja:"lojas online com pagamentos integrados", automacao:"automações e assistentes de IA para o seu negócio", sistemas:"sistemas de gestão e painéis à medida", marketing:"SEO, anúncios e presença digital" },
+  BR: { site:"sites e landing pages sob medida", loja:"lojas virtuais com pagamentos integrados", automacao:"automações e assistentes de IA para o seu negócio", sistemas:"sistemas de gestão e painéis sob medida", marketing:"SEO, anúncios e presença digital" }
+};
+const SRC_DEFAULTS = {
+  PT: {
+    site: { phrases:["preciso de um site","procuro quem faça um site","quanto custa um site","criar site para a minha empresa","alguém recomenda quem faça sites","orçamento para website"], jobs:["programador web","web designer"], work:["site","landing page"], tags:["criaçãodesites","procuroprogramador"] },
+    loja: { phrases:["preciso de uma loja online","procuro quem faça loja online","criar loja online","orçamento loja online"], jobs:["responsável de e-commerce","gestor de loja online"], work:["loja online","e-commerce"], tags:["lojaonline","ecommerceportugal"] },
+    automacao: { phrases:["automatizar whatsapp","chatbot para a minha empresa","automatizar processos","procuro quem automatize","integração entre sistemas"], jobs:["automação de processos","rpa"], work:["automação","chatbot"], tags:["automatização","chatbot"] },
+    sistemas: { phrases:["preciso de um sistema de gestão","procuro programador","aplicação à medida","painel de gestão para a empresa"], jobs:["programador full stack","developer web"], work:["sistema","aplicação web"], tags:["procuroprogramador","softwarehouse"] },
+    marketing: { phrases:["procuro gestor de redes sociais","preciso de ajuda com seo","preciso de uma agência de marketing digital","google ads para a minha empresa"], jobs:["gestor de redes sociais","especialista seo","marketing digital"], work:["seo","marketing digital"], tags:["marketingdigital","gestorderedessociais"] }
+  },
+  BR: {
+    site: { phrases:["preciso de um site","procuro quem faça um site","quanto custa um site","criar site para minha empresa","alguém indica quem faz site","orçamento site"], jobs:["desenvolvedor web","web designer"], work:["site","landing page"], tags:["criaçãodesites","procuroprogramador"] },
+    loja: { phrases:["preciso de uma loja virtual","procuro quem faça loja virtual","criar loja virtual","orçamento loja virtual"], jobs:["analista de e-commerce","gestor de loja virtual"], work:["loja virtual","e-commerce"], tags:["lojavirtual","ecommercebrasil"] },
+    automacao: { phrases:["automatizar whatsapp","chatbot para minha empresa","automação de processos","preciso de automação","integrar sistemas"], jobs:["automação de processos","rpa"], work:["automação","chatbot"], tags:["automação","chatbot"] },
+    sistemas: { phrases:["preciso de um sistema de gestão","procuro programador","desenvolvedor freelancer","aplicativo sob medida"], jobs:["desenvolvedor full stack","programador"], work:["sistema","aplicação web"], tags:["procuroprogramador","desenvolvedorfreelancer"] },
+    marketing: { phrases:["procuro gestor de tráfego","preciso de ajuda com seo","preciso de uma agência de marketing","google ads para minha empresa"], jobs:["gestor de tráfego","analista de marketing digital"], work:["seo","tráfego pago"], tags:["marketingdigital","gestordetrafego"] }
+  }
+};
+const fonteOf = l => l.fonte || (l.radar ? "radar" : l.inbound ? "site" : "importado");
+function getSrc(market, svc){
+  const base = SRC_DEFAULTS[market][svc], over = ((S.sources || {})[market] || {})[svc];
+  return Object.assign({}, base, over || {});
+}
+function sourceCards(market, svc, period){
+  const d = getSrc(market, svc), enc = encodeURIComponent, cc = market === "BR" ? "br" : "pt", place = market === "BR" ? "Brasil" : "Portugal";
+  const gp = { d: "qdr:d", w: "qdr:w", m: "qdr:m" }[period], li = { d: "past-24h", w: "past-week", m: "past-month" }[period], fa = { d: 1, w: 7, m: 30 }[period];
+  const g = (p, site) => `https://www.google.com/search?q=${enc((site ? "site:" + site + " " : "") + '"' + p + '"')}&tbs=${gp}&gl=${cc}&hl=pt`;
+  const cards = [
+    { t: "Google: pessoas a pedir o serviço", n: "Frases exatas na última semana (ou o período escolhido). Procure grupos públicos, fóruns e publicações.", l: d.phrases.map(p => [p, g(p)]) },
+    { t: "Google: publicações públicas do LinkedIn", n: "O Google encontra publicações do LinkedIn visíveis sem sessão. Cole o link na captura rápida.", l: d.phrases.map(p => [p, g(p, "linkedin.com/posts")]) },
+    { t: "Google: publicações públicas do Instagram", n: "Funciona melhor para perfis e publicações públicas. Cole o link na captura rápida.", l: d.phrases.map(p => [p, g(p, "instagram.com")]) },
+    { t: "LinkedIn: publicações (precisa de sessão iniciada)", n: "Abre a pesquisa de conteúdo do próprio LinkedIn, ordenada por data. Contacte a pessoa dentro do LinkedIn, sem automatismos.", l: d.phrases.map(p => [p, `https://www.linkedin.com/search/results/content/?keywords=${enc(p)}&datePosted=${enc('"' + li + '"')}&origin=FACETED_SEARCH&sortBy=${enc('"date_posted"')}`]) },
+    { t: "Workana: projetos de clientes à procura de freelancers", n: "Envie a proposta dentro da Workana: as regras da plataforma não permitem levar o cliente para fora.", l: d.work.map(w => [w, `https://www.workana.com/jobs?query=${enc(w)}&language=pt`]) },
+    { t: "Empresas a contratar (sinal de que precisam)", n: "Uma empresa a recrutar este perfil pode preferir um serviço externo. Contacte-a pelo site ou perfil institucional.", l: [
+        ...d.jobs.map(j => ["LinkedIn: " + j, `https://www.linkedin.com/jobs/search/?keywords=${enc(j)}&location=${enc(place)}&f_TPR=r${fa * 86400}`]),
+        ...d.jobs.map(j => ["Indeed: " + j, market === "BR" ? `https://br.indeed.com/jobs?q=${enc(j)}&l=${enc("Brasil")}&fromage=${fa}` : `https://pt.indeed.com/jobs?q=${enc(j)}&l=${enc("Portugal")}&fromage=${fa}`]),
+        ...(market === "PT" ? d.jobs.map(j => ["Net-Empregos: " + j, `https://www.net-empregos.com/pesquisa-empregos.asp?chaves=${enc(j)}&cidade=&categoria=0&zona=0&tipo=0`]) : d.jobs.map(j => ["Google Vagas: " + j, `https://www.google.com/search?q=${enc(j + " vagas")}&ibp=htl;jobs&hl=pt&gl=br`]))
+      ] },
+    { t: "Instagram: hashtags", n: "Poucas pessoas pedem serviços aqui. Use para encontrar negócios novos e perfis ativos no seu mercado.", l: d.tags.map(t => ["#" + t, `https://www.instagram.com/explore/tags/${enc(t)}/`]) }
+  ];
+  return cards;
+}
+function captureLead(){
+  const v = id => ($("#" + id).value || "").trim(), link = v("qcLink"), name = v("qcName"), src = v("qcSrc"), market = v("qcMarket");
+  if (!/^https?:\/\//i.test(link)) return toast("Cole o link da publicação (começa por https://).");
+  if (!name) return toast("Escreva o nome da pessoa ou empresa.");
+  if (S.leads.some(l => l.source === link)) return alert("Esta publicação já foi capturada.");
+  const handle = v("qcHandle"), isIg = src === "instagram" || handle.startsWith("@");
+  const phone = normPhone(v("qcPhone"), market), cand = { name, phone, instagram: isIg ? handle : "", site: "", city: v("qcCity") };
+  const dup = findDuplicate(cand), reg = registryFind(cand);
+  if (dup || reg) return alert(dup ? `Esta pessoa ou empresa já existe na lista ("${dup.name}", estado ${STAT[dup.status]}${dup.lastContact ? ", contactada em " + fmtD(dup.lastContact) : ""}). Não foi criada outra vez.` : `Já foi contactada em ${fmtD(reg.last)}. Para não a incomodar, não foi criada outra vez.`);
+  const wanted = v("qcWanted"), now = new Date().toISOString();
+  S.leads.push({ id: uid(), name, phone, email: v("qcEmail"), instagram: cand.instagram, profile: !isIg ? handle : "", city: cand.city, market, segment: v("qcSeg") || "outro", service: v("qcSvc"), fonte: src, wanted, source: link, signals: ["asked"], notes: wanted ? `Pediu: "${wanted}"` : "", status: "novo", followups: 0, created: today(), history: [{ t: now, type: "created", text: `Capturado em ${SRC[src]}: ${link}` }] });
+  save(); ["qcLink", "qcName", "qcHandle", "qcWanted", "qcPhone", "qcEmail", "qcCity"].forEach(i => $("#" + i).value = "");
+  render(); toast(`"${name}" capturado. Está em "Hoje", com prioridade alta.`); const f = $("#qcLink"); if (f) f.focus();
+}
+function sourceStatsHtml(){
+  const rows = {};
+  for (const l of S.leads) {
+    if (l.demo) continue; const k = fonteOf(l), r = rows[k] || (rows[k] = { n: 0, c: 0, r: 0, g: 0 });
+    r.n++; if (l.status !== "novo") r.c++; if (l.replyResult === "sim" || ["reuniao", "proposta", "negociacao", "ganho"].includes(l.status)) r.r++; if (l.status === "ganho") r.g++;
+  }
+  const list = Object.entries(rows).sort((a, b) => b[1].n - a[1].n);
+  if (!list.length) return `<p class="note">Ainda não há dados. Depois de capturar e contactar alguns leads, aqui vê quais as fontes que trazem clientes.</p>`;
+  return `<table><thead><tr><th>Fonte</th><th>Leads</th><th>Contactados</th><th>Responderam</th><th>Ganhos</th></tr></thead><tbody>${list.map(([k, r]) => `<tr><td><b>${esc(SRC[k] || k)}</b></td><td>${r.n}</td><td>${r.c}</td><td>${r.r}</td><td>${r.g}</td></tr>`).join("")}</tbody></table>`;
+}
+function viewSources(){
+  const u = ui.src, d = getSrc(u.market, u.svc), cards = sourceCards(u.market, u.svc, u.period);
+  let h = `<div class="legal" style="background:#f3edff;border-color:rgba(124,58,237,.25);color:#3b2a66"><b>Fontes:</b> as plataformas não permitem recolha automática de publicações, por isso o painel faz o trabalho chato por si: abre as <b>pesquisas já preenchidas</b> em cada site (frases em PT-PT ou PT-BR). Quando vir alguém a pedir o serviço, use a <b>captura rápida</b>: o lead fica criado, com o link como prova e prioridade alta. Rotina sugerida: 10 minutos por dia.</div>
+  <div class="bar"><label class="f">Mercado<select id="sMarket"><option value="PT" ${u.market==="PT"?"selected":""}>Portugal</option><option value="BR" ${u.market==="BR"?"selected":""}>Brasil</option></select></label>
+    <label class="f">Serviço<select id="sSvc">${Object.entries(SVC).map(([k, v]) => `<option value="${k}" ${u.svc===k?"selected":""}>${v}</option>`).join("")}</select></label>
+    <label class="f">Período<select id="sPer"><option value="d" ${u.period==="d"?"selected":""}>Últimas 24 horas</option><option value="w" ${u.period==="w"?"selected":""}>Última semana</option><option value="m" ${u.period==="m"?"selected":""}>Último mês</option></select></label></div>
+  <div class="card" id="qcCard"><h3 style="margin-top:0">Captura rápida</h3><p class="note">Encontrou alguém a pedir o serviço? Registe em 20 segundos.</p>
+    <div class="grid2"><label class="f">Onde encontrou *<select id="qcSrc">${["instagram", "linkedin", "workana", "google", "emprego", "outro"].map(k => `<option value="${k}">${SRC[k]}</option>`).join("")}</select></label>
+      <label class="f">Link da publicação *<input id="qcLink" placeholder="https://..."></label>
+      <label class="f">Nome da pessoa ou empresa *<input id="qcName"></label>
+      <label class="f">Perfil (@instagram ou link do LinkedIn)<input id="qcHandle" placeholder="@perfil"></label>
+      <label class="f">O que pediu (as palavras dela)<input id="qcWanted" placeholder="ex.: um site para a minha clínica"></label>
+      <label class="f">Serviço<select id="qcSvc">${Object.entries(SVC).map(([k, v]) => `<option value="${k}" ${u.svc===k?"selected":""}>${v}</option>`).join("")}</select></label>
+      <label class="f">Mercado<select id="qcMarket"><option value="PT" ${u.market==="PT"?"selected":""}>Portugal</option><option value="BR" ${u.market==="BR"?"selected":""}>Brasil</option></select></label>
+      <label class="f">Segmento do negócio<select id="qcSeg"><option value="outro">Outro</option>${Object.entries(SEG).filter(([k]) => k !== "outro").map(([k, v]) => `<option value="${k}">${v}</option>`).join("")}</select></label>
+      <label class="f">Cidade<input id="qcCity"></label><label class="f">WhatsApp ou telefone (se público)<input id="qcPhone"></label>
+      <label class="f">E-mail (se público)<input id="qcEmail" type="email"></label></div>
+    <div class="actions"><button class="b pri" id="qcGo">Criar lead</button></div></div>`;
+  h += cards.map(c => `<div class="card"><h3 style="margin:0 0 4px">${esc(c.t)}</h3><p class="note" style="margin:0 0 8px">${esc(c.n)}</p><div class="chips2">${c.l.map(([t, url]) => `<a class="chip2" href="${esc(url)}" target="_blank" rel="noopener" style="text-decoration:none">${esc(t)}</a>`).join("")}</div></div>`).join("");
+  h += `<div class="card"><h3 style="margin:0 0 4px">Alertas grátis por e-mail</h3><p class="note" style="margin:0 0 8px">Crie alertas do Google com estas frases e receba novos resultados sem procurar.</p><div class="actions"><a class="b" href="https://www.google.com/alerts" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center">Abrir Google Alerts</a><button class="b" id="sCopy">Copiar frases (formato do alerta)</button></div></div>
+  <details class="card"><summary>Editar as frases, cargos, termos e hashtags (${esc(u.market)} · ${esc(SVC[u.svc])})</summary>
+    <div class="grid2"><label class="f">Frases de quem pede o serviço (uma por linha)<textarea id="sePhr" style="min-height:110px">${esc(d.phrases.join("\n"))}</textarea></label>
+      <label class="f">Cargos de empresas a contratar<textarea id="seJobs" style="min-height:110px">${esc(d.jobs.join("\n"))}</textarea></label>
+      <label class="f">Termos para a Workana<textarea id="seWork" style="min-height:70px">${esc(d.work.join("\n"))}</textarea></label>
+      <label class="f">Hashtags (sem #)<textarea id="seTags" style="min-height:70px">${esc(d.tags.join("\n"))}</textarea></label></div>
+    <div class="actions"><button class="b pri" id="seSave">Guardar</button><button class="b" id="seReset">Repor os originais</button></div></details>
+  <div class="card"><h3 style="margin:0 0 8px">Que fontes trazem clientes?</h3>${sourceStatsHtml()}</div>`;
+  return h;
+}
+function bindSources(){
+  const u = ui.src, g = (id, fn) => { const e = $("#" + id); if (e) e.onclick = fn; };
+  const m = $("#sMarket"); if (!m) return;
+  m.onchange = () => { u.market = m.value; render(); }; $("#sSvc").onchange = e => { u.svc = e.target.value; render(); }; $("#sPer").onchange = e => { u.period = e.target.value; render(); };
+  g("qcGo", captureLead);
+  g("sCopy", () => { const d = getSrc(u.market, u.svc); navigator.clipboard.writeText(d.phrases.map(p => '"' + p + '"').join(" OR ")).then(() => toast("Frases copiadas. Cole no Google Alerts."), () => toast("Não foi possível copiar.")); });
+  const lines = id => $("#" + id).value.split("\n").map(x => x.trim()).filter(Boolean);
+  g("seSave", () => { S.sources = S.sources || {}; S.sources[u.market] = S.sources[u.market] || {}; const o = { phrases: lines("sePhr"), jobs: lines("seJobs"), work: lines("seWork"), tags: lines("seTags").map(t => t.replace(/^#/, "")) }; if (!o.phrases.length) return toast("Precisa de pelo menos uma frase."); S.sources[u.market][u.svc] = o; save(); render(); toast("Guardado."); });
+  g("seReset", () => { if (S.sources && S.sources[u.market]) delete S.sources[u.market][u.svc]; save(); render(); toast("Repostos os originais."); });
+}
+
+/* ============ radar: encontra empresas (OpenStreetMap / Overpass) ============ */
+const RADAR_SEG = {
+  clinica: 'nwr["amenity"~"^(dentist|clinic|doctors)$"](area.a);nwr["healthcare"~"^(dentist|clinic|doctor|physiotherapist|psychotherapist)$"](area.a);',
+  advocacia: 'nwr["office"="lawyer"](area.a);',
+  estetica: 'nwr["shop"~"^(beauty|hairdresser)$"](area.a);nwr["beauty"](area.a);',
+  clima: 'nwr["craft"="hvac"](area.a);nwr["shop"="hvac"](area.a);'
+};
+const PUBLIC_RE = /(centro de sa[uú]de|hospital|\bsns\b|c[aâ]mara municipal|junta de freguesia|\busf\b|\bucsp\b|prefeitura|posto de sa[uú]de|\bubs\b|\bupa\b|santa casa|cruz vermelha|bombeiros)/i;
+function radarQuery(market, city, seg){
+  const cc = market === "BR" ? "BR" : "PT", lvl = market === "BR" ? "8" : "7", c = String(city).replace(/["\\]/g, "").trim();
+  return `[out:json][timeout:60];area["ISO3166-1"="${cc}"]->.c;area["name"~"^${c}$",i]["boundary"="administrative"]["admin_level"="${lvl}"](area.c)->.a;(${RADAR_SEG[seg]});out tags center 500;`;
+}
+async function overpass(q){
+  const eps = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]; let last;
+  for (const ep of eps) {
+    try {
+      const r = await fetch(ep, { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body:"data=" + encodeURIComponent(q) });
+      if (r.ok) { const j = await r.json(); return j.elements || []; }
+      last = new Error("O servidor de mapas respondeu " + r.status + ".");
+    } catch (e) { last = e; }
+  }
+  throw last || new Error("Sem resposta do servidor de mapas.");
+}
+function pickPhone(raw, market){
+  const list = String(raw || "").split(/[;,\/]/).map(x => normPhone(x, market)).filter(Boolean);
+  return list.find(p => !likelyLandline(p, market)) || list[0] || "";
+}
+function osmCandidates(els, market, seg, city){
+  const out = [];
+  for (const e of els) {
+    const t = e.tags || {}, name = (t.name || "").trim(); if (!name || PUBLIC_RE.test(name)) continue;
+    const phone = pickPhone(t.phone || t["contact:phone"] || t.mobile || t["contact:mobile"], market);
+    const site = t.website || t["contact:website"] || t.url || "", ig = t["contact:instagram"] || t.instagram || "";
+    const signals = []; if (!site) signals.push("nosite"); if (!site && ig) signals.push("igonly");
+    out.push({ osm: e.type + "/" + e.id, name, phone, mobile: !!phone && !likelyLandline(phone, market), site, instagram: ig, city: t["addr:city"] || city, market, segment: seg, signals, source: "https://www.openstreetmap.org/" + e.type + "/" + e.id });
+  }
+  return out;
+}
+/* knownLead: ver bloco "histórico, registo de contactos e regras anti-reenvio" */
+function radarFilter(cands, o){
+  let drop = { semTel: 0, fixo: 0, comSite: 0, jaTenho: 0 }; const keep = [];
+  for (const c of cands) {
+    if (!c.phone) { drop.semTel++; continue; }
+    if (o.mobile && !c.mobile) { drop.fixo++; continue; }
+    if (c.site && !o.withSite) { drop.comSite++; continue; }
+    if (knownLead(c)) { drop.jaTenho++; continue; }
+    keep.push(c);
+  }
+  const seen = new Set(); return { keep: keep.filter(c => !seen.has(c.phone) && seen.add(c.phone)), drop };
+}
+function addCandidate(c){
+  S.leads.push({ id: uid(), radar: true, osm: c.osm, name: c.name, phone: c.phone, site: c.site, instagram: c.instagram, city: c.city, market: c.market, segment: c.segment, signals: c.signals, source: c.source, notes: "Encontrado no Radar (OpenStreetMap). Confirme no Google que não tem site antes de enviar.", status: "novo", followups: 0, created: today() });
+}
+async function runRadar(){
+  const r = ui.radar; if (!r.city.trim()) return toast("Escreva o nome da cidade.");
+  r.busy = true; r.info = "A procurar…"; r.results = null; render();
+  try {
+    const els = await overpass(radarQuery(r.market, r.city, r.seg)), cands = osmCandidates(els, r.market, r.seg, r.city.trim()), f = radarFilter(cands, r);
+    r.results = f.keep; r.sel = {}; f.keep.forEach(c => r.sel[c.osm] = true);
+    r.info = `${cands.length} negócios encontrados · ${f.keep.length} novos para si` + (f.drop.comSite ? ` · ${f.drop.comSite} já têm site` : "") + (f.drop.fixo ? ` · ${f.drop.fixo} só com telefone fixo` : "") + (f.drop.semTel ? ` · ${f.drop.semTel} sem telefone` : "") + (f.drop.jaTenho ? ` · ${f.drop.jaTenho} já na sua lista` : "");
+    if (!cands.length) r.info = "Nada encontrado. Confirme o nome da cidade (com acentos) e o mercado.";
+  } catch (e) { r.info = "Erro: " + e.message + " Tente outra vez dentro de um minuto."; }
+  r.busy = false; render();
+}
+function viewRadar(){
+  const r = ui.radar, rs = r.results || [], n = rs.filter(c => r.sel[c.osm]).length;
+  let h = `<div class="legal"><b>Radar:</b> procura empresas reais (clínicas, advocacia, estética, climatização) numa cidade e traz as que <b>não têm site</b> e têm telemóvel. Fonte: © colaboradores do OpenStreetMap (dados abertos). Um negócio sem site no mapa pode ter site: o painel marca "verificar no Google". Muitos cabeleireiros são empresários em nome individual: ao enviar, tenha o cuidado do RGPD (identifique-se e dê a opção de sair).</div>
+  <div class="card"><div class="bar" style="margin:0">
+    <label class="f">Mercado<select id="rMarket"><option value="PT" ${r.market==="PT"?"selected":""}>Portugal</option><option value="BR" ${r.market==="BR"?"selected":""}>Brasil</option></select></label>
+    <label class="f">Cidade (concelho / município)<input id="rCity" value="${esc(r.city)}" placeholder="Ex.: Coimbra, Braga, São Paulo"></label>
+    <label class="f">Segmento<select id="rSeg">${["clinica","advocacia","estetica","clima"].map(k => `<option value="${k}" ${r.seg===k?"selected":""}>${SEG[k]}</option>`).join("")}</select></label></div>
+    <div class="checks"><label><input type="checkbox" id="rMobile" ${r.mobile?"checked":""}> Só com telemóvel (WhatsApp provável)</label><label><input type="checkbox" id="rSite" ${r.withSite?"checked":""}> Incluir quem já tem site</label></div>
+    <div class="actions"><button class="b pri" id="rGo" ${r.busy?"disabled":""}>${r.busy?"A procurar…":"Procurar"}</button><button class="b" id="rSave">Guardar esta pesquisa para o Radar diário</button></div>
+    <p class="note">${esc(r.info)}</p></div>`;
+  if (rs.length) {
+    h += `<div class="actions" style="margin:6px 0"><button class="b pri" id="rAdd" ${n?"":"disabled"}>Adicionar ${n} selecionados à lista Hoje</button><button class="b" id="rAll">Selecionar todos</button><button class="b" id="rNone">Limpar</button></div>
+    <table><thead><tr><th></th><th>Empresa</th><th>Telefone</th><th>Sinais</th><th></th></tr></thead><tbody>${rs.map(c => `<tr><td><input type="checkbox" data-sel="${esc(c.osm)}" ${r.sel[c.osm]?"checked":""} style="width:auto"></td><td><b>${esc(c.name)}</b><br><span class="note">${esc(c.city || "")}${c.instagram ? " · " + esc(c.instagram) : ""}</span></td><td>${esc("+" + c.phone)}</td><td>${c.signals.map(k => `<span class="tag">${esc(SIG[k][0])}</span>`).join("") || '<span class="note">—</span>'}</td><td><a href="https://www.google.com/search?q=${encodeURIComponent(c.name + " " + (c.city || ""))}" target="_blank" rel="noopener">Google</a></td></tr>`).join("")}</tbody></table>`;
+  }
+  h += `<div class="card"><h3 style="margin-top:0">Radar diário (automático)</h3>
+    <p class="note">Guarde pesquisas e, ao abrir o painel de manhã, ele corre-as sozinho e deixa os novos leads prontos em "Hoje". Máximo de novos por dia: <input type="number" id="rMax" min="5" max="60" value="${S.radar.max}" style="width:80px;display:inline-block"> <label style="display:inline-flex;gap:6px;align-items:center;margin-left:10px"><input type="checkbox" id="rAuto" ${S.radar.auto?"checked":""} style="width:auto"> Ligado</label></p>
+    ${S.radar.searches.length ? `<table><tbody>${S.radar.searches.map((x, i) => `<tr><td>${x.market === "BR" ? "Brasil" : "Portugal"}</td><td><b>${esc(x.city)}</b></td><td>${esc(SEG[x.seg])}</td><td>${x.mobile ? "só telemóvel" : "todos"}${x.withSite ? ", com site" : ""}</td><td><button class="b bad" data-rmsearch="${i}">Remover</button></td></tr>`).join("")}</tbody></table>
+    <div class="actions"><button class="b" id="rRunNow">Correr o Radar agora</button><span class="note" style="align-self:center">Última execução: ${esc(S.radar.lastRun || "nunca")}</span></div>` : '<p class="note">Ainda não há pesquisas guardadas.</p>'}</div>`;
+  return h;
+}
+function bindRadar(){
+  const r = ui.radar, g = (id, fn) => { const e = $("#" + id); if (e) e.onclick = fn; };
+  const m = $("#rMarket"); if (!m) { g("rRunNow", () => autoRadar(true)); return; }
+  m.onchange = () => { r.market = m.value; };
+  $("#rCity").oninput = e => { r.city = e.target.value; };
+  $("#rCity").onkeydown = e => { if (e.key === "Enter") runRadar(); };
+  $("#rSeg").onchange = e => { r.seg = e.target.value; };
+  $("#rMobile").onchange = e => { r.mobile = e.target.checked; };
+  $("#rSite").onchange = e => { r.withSite = e.target.checked; };
+  g("rGo", runRadar);
+  g("rSave", () => {
+    if (!r.city.trim()) return toast("Escreva a cidade primeiro.");
+    if (S.radar.searches.some(x => x.market === r.market && x.city.toLowerCase() === r.city.trim().toLowerCase() && x.seg === r.seg)) return toast("Essa pesquisa já está guardada.");
+    S.radar.searches.push({ market: r.market, city: r.city.trim(), seg: r.seg, mobile: r.mobile, withSite: r.withSite }); save(); render(); toast("Pesquisa guardada. Corre sozinha ao abrir o painel.");
+  });
+  g("rAdd", () => { const sel = (r.results || []).filter(c => r.sel[c.osm]); sel.forEach(addCandidate); r.results = (r.results || []).filter(c => !r.sel[c.osm]); save(); ui.tab = "hoje"; render(); toast(`${sel.length} leads adicionados a "Hoje".`); });
+  g("rAll", () => { (r.results || []).forEach(c => r.sel[c.osm] = true); render(); });
+  g("rNone", () => { r.sel = {}; render(); });
+  $$("[data-sel]").forEach(c => c.onchange = () => { r.sel[c.dataset.sel] = c.checked; const b = $("#rAdd"); const n = Object.values(r.sel).filter(Boolean).length; if (b) { b.textContent = `Adicionar ${n} selecionados à lista Hoje`; b.disabled = !n; } });
+  $$("[data-rmsearch]").forEach(b => b.onclick = () => { S.radar.searches.splice(+b.dataset.rmsearch, 1); save(); render(); });
+  const mx = $("#rMax"); if (mx) mx.onchange = () => { S.radar.max = Math.max(5, Math.min(60, +mx.value || 20)); save(); };
+  const au = $("#rAuto"); if (au) au.onchange = () => { S.radar.auto = au.checked; save(); };
+  g("rRunNow", () => autoRadar(true));
+}
+let radarRunning = false;
+async function autoRadar(manual){
+  if (radarRunning || !S.radar.searches.length) return; if (!manual && (!S.radar.auto || S.radar.lastRun === today())) return;
+  radarRunning = true; let added = 0, errors = 0;
+  try {
+    for (const x of S.radar.searches) {
+      if (added >= S.radar.max) break;
+      try {
+        const els = await overpass(radarQuery(x.market, x.city, x.seg)), f = radarFilter(osmCandidates(els, x.market, x.seg, x.city), x);
+        for (const c of f.keep) { if (added >= S.radar.max) break; addCandidate(c); added++; }
+      } catch (e) { errors++; }
+      await new Promise(r => setTimeout(r, 1500));
+    }
+    if (errors < S.radar.searches.length) S.radar.lastRun = today();
+    save(); render();
+    toast(added ? `Radar: ${added} novos leads prontos em "Hoje".` : errors ? "Radar: o servidor de mapas não respondeu. Tente mais tarde." : "Radar: sem novos leads hoje.");
+  } finally { radarRunning = false; }
+}
+
+/* ============ ligação ao site (Supabase, só REST) ============ */
+const SB_DEFAULT_URL = "https://ampivgjlgdlkazfpckdb.supabase.co", SESS = "alphaleads.session";
+let syncing = false;
+const SB_DEFAULT_KEY = "sb_publishable_8sJQyuckXuPX7Nuwte_OXw_djMdivuo";
+const sbCfg = () => ({ url: (S.settings.sbUrl || SB_DEFAULT_URL).replace(/\/+$/, ""), key: S.settings.sbKey || SB_DEFAULT_KEY });
+const getSess = () => { try { return JSON.parse(localStorage.getItem(SESS)); } catch (e) { return null; } };
+function putSess(j){
+  if (!j) { localStorage.removeItem(SESS); return; }
+  const old = getSess() || {};
+  localStorage.setItem(SESS, JSON.stringify({ access: j.access_token, refresh: j.refresh_token, exp: Math.floor(Date.now() / 1000) + (j.expires_in || 3600), email: (j.user && j.user.email) || old.email || "" }));
+}
+function sbHeaders(token){
+  const { key } = sbCfg(), h = { apikey: key, "Content-Type": "application/json" };
+  if (token) h.Authorization = "Bearer " + token; else if (key.startsWith("eyJ")) h.Authorization = "Bearer " + key;
+  return h;
+}
+async function sbLogin(email, pass){
+  const { url, key } = sbCfg(); if (!key) throw new Error("Falta a chave pública.");
+  const r = await fetch(url + "/auth/v1/token?grant_type=password", { method: "POST", headers: sbHeaders(), body: JSON.stringify({ email, password: pass }) });
+  const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error_description || j.msg || "Não foi possível entrar. Confirme o e-mail e a palavra-passe.");
+  putSess(j);
+}
+async function sbToken(){
+  if (!getSess()) throw new Error("Sem sessão.");
+  const s = getSess(); if (!s) throw new Error("Sem sessão.");
+  if (s.exp - 60 > Math.floor(Date.now() / 1000)) return s.access;
+  const { url } = sbCfg();
+  const r = await fetch(url + "/auth/v1/token?grant_type=refresh_token", { method: "POST", headers: sbHeaders(), body: JSON.stringify({ refresh_token: s.refresh }) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) { putSess(null); throw new Error("A sessão expirou."); }
+  putSess(j); return j.access_token;
+}
+async function syncInbound(manual){
+  if (syncing) return; const { url, key } = sbCfg();
+  if (!key || !getSess()) { if (manual) toast("Ligue primeiro o site em Definições."); return; }
+  syncing = true; $("#syncBtn").textContent = "A sincronizar…";
+  try {
+    const token = await sbToken(), H = sbHeaders(token);
+    const r = await fetch(url + "/rest/v1/inbound_leads?imported_at=is.null&select=*&order=created_at.asc&limit=200", { headers: H });
+    if (!r.ok) throw new Error("O servidor recusou a leitura (" + r.status + "). Confirme se executou o script SQL e se o e-mail é o autorizado.");
+    const rows = await r.json(); let added = 0;
+    for (const row of rows) {
+      const digits = String(row.phone || "").replace(/\D/g, ""), mk = digits.startsWith("55") && digits.length >= 12 ? "BR" : "PT", phone = normPhone(row.phone, mk);
+      const exists = S.leads.some(l => l.remoteId === row.id), blocked = S.optout.some(o => o.phone && phone && o.phone === phone);
+      if (!exists && !blocked) {
+        S.leads.push({ id: uid(), remoteId: row.id, inbound: true, name: row.name, email: row.email, phone, market: mk, lang: row.lang || "pt", need: row.need || "", company: row.company || "", inboundMsg: row.message, segment: guessSeg(row.company || ""), signals: ["inbound"], status: "novo", followups: 0, created: (row.created_at || "").slice(0, 10) || today(), source: "", notes: "" });
+        added++;
+      }
+      await fetch(url + "/rest/v1/inbound_leads?id=eq." + encodeURIComponent(row.id), { method: "PATCH", headers: Object.assign({ Prefer: "return=minimal" }, H), body: JSON.stringify({ imported_at: new Date().toISOString() }) });
+    }
+    const d = new Date(); S.settings.lastSync = pad(d.getHours()) + ":" + pad(d.getMinutes()); save();
+    if (added || manual) toast(added ? `${added} novo${added > 1 ? "s" : ""} pedido${added > 1 ? "s" : ""} do site.` : "Sem pedidos novos.");
+  } catch (e) { if (manual || !/Falha|fetch/i.test(e.message)) toast(e.message); }
+  finally { syncing = false; renderSync(); render(); }
+}
+function renderSync(){
+  const b = $("#syncBtn"); if (!b) return; const { key } = sbCfg(), s = getSess();
+  b.textContent = !key ? "Site: não ligado" : !s ? "Site: sem sessão" : "Site: ligado · sync " + (S.settings.lastSync || "—") + " ↻";
+  b.onclick = () => { if (key && s) syncInbound(true); else { ui.tab = "config"; render(); } };
+  const st = $("#sbStatus"); if (st) st.textContent = !key ? "Ainda não ligado. Cole a chave pública do projeto e entre." : !s ? "Chave guardada. Falta entrar com o e-mail e a palavra-passe." : "Ligado como " + (s.email || "utilizador") + ". Os pedidos do site entram sozinhos em 'Hoje'.";
+}
+function bindSync(){
+  renderSync();
+  const g = (id, fn) => { const e = $("#" + id); if (e) e.onclick = fn; };
+  g("sbLogin", async () => {
+    S.settings.sbUrl = $("#sbUrl").value.trim() || SB_DEFAULT_URL; S.settings.sbKey = $("#sbKey").value.trim(); S.settings.sbEmail = $("#sbEmail").value.trim(); save();
+    try { await sbLogin(S.settings.sbEmail, $("#sbPass").value); $("#sbPass").value = ""; toast("Sessão iniciada."); renderSync(); await syncInbound(true); }
+    catch (e) { toast(e.message); }
+  });
+  g("sbSync", () => syncInbound(true));
+  g("sbLogout", logout);
+}
+
+/* ============ login e arranque ============ */
+function showGate(msg){
+  const g = $("#gate"); g.classList.remove("hidden");
+  if (!$("#gateForm")) location.reload();
+  $("#gErr").textContent = msg || ""; const em = $("#gEmail"); if (!em.value) em.value = (getSess() || {}).email || S.settings.sbEmail || ""; (em.value ? $("#gPass") : em).focus();
+}
+async function logout(){
+  clearTimeout(pushTimer); dirty = true; try { await push(); } catch (e) {}
+  putSess(null); location.reload();
+}
+function startApp(){
+  $("#gate").classList.add("hidden"); setSaveState("", "Guardado");
+  if (started) { if (dirty) push(); return; }
+  started = true;
+  $$("#tabs button").forEach(b => b.onclick = () => { ui.tab = b.dataset.t; ui.showAll = false; render(); });
+  migrate();
+  $("#dlg").addEventListener("close", () => $("#dlg").classList.remove("wide"));
+  render();
+  $("#qcBtn").onclick = () => { ui.tab = "fontes"; render(); const e = $("#qcLink"); if (e) e.focus(); };
+  $("#outBtn").onclick = logout;
+  renderSync();
+  $("#briefBtn").onclick = showBrief;
+  Promise.race([syncInbound(false), new Promise(r => setTimeout(r, 4000))]).catch(() => {}).finally(() => setTimeout(maybeBrief, 400));
+  setInterval(() => { if (started && !locked) syncInbound(false); }, 5 * 60 * 1000);
+  addEventListener("focus", () => { if (started && !locked) { syncInbound(false); if (housekeeping()) render(); } });
+  addEventListener("beforeunload", e => { if (dirty || pushing) { e.preventDefault(); e.returnValue = ""; } });
+  setTimeout(() => autoRadar(false), 1500);
+}
+$("#gateForm").addEventListener("submit", async e => {
+  e.preventDefault(); const btn = $("#gBtn"), err = $("#gErr"); btn.disabled = true; btn.textContent = "A entrar…"; err.textContent = "";
+  try {
+    await sbLogin($("#gEmail").value.trim(), $("#gPass").value); $("#gPass").value = "";
+    if (!started) await loadRemote();
+    startApp();
+  } catch (x) { err.textContent = /Failed to fetch|NetworkError/i.test(x.message) ? "Sem ligação à internet." : x.message; }
+  finally { btn.disabled = false; btn.textContent = "Entrar"; }
+});
+(async function boot(){
+  if (!getSess()) return showGate();
+  try { await loadRemote(); startApp(); }
+  catch (x) { showGate(/sess/i.test(x.message) ? "" : x.message); }
+})();
+</script>
+</body>
+</html>
